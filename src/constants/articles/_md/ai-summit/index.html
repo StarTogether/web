@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-rendering: optimizeLegibility;
+        line-height: 1;
+        margin-top: 0;
+        color: #222;
+      }
+
+      blockquote + figcaption cite {
+        display: block;
+        font-size: inherit;
+        text-align: right;
+      }
+
+      body {
+        word-wrap: break-word;
+      }
+
+      pre code {
+        word-wrap: normal;
+      }
+
+      body {
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        color: #444;
+      }
+
+      h1 {
+        font-size: 2em;
+        /* 2*16 = 32 */
+      }
+
+      h2 {
+        font-size: 1.5em;
+        /* 1.5*16 = 24 */
+      }
+
+      h3 {
+        font-size: 1.17em;
+        /* 1.17*16 = 18.72 */
+      }
+
+      h4 {
+        font-size: 1em;
+        /* 1*16 = 16 */
+      }
+
+      h5 {
+        font-size: 0.83em;
+        /* 0.83*16 = 13.28 */
+      }
+
+      h6 {
+        font-size: 0.75em;
+        /* 0.75*16 = 12 */
+      }
+
+      h1 {
+        margin: 2.42424rem 0 1.454544rem;
+      }
+
+      h2 {
+        margin: 2.0202rem 0 1.21212rem;
+      }
+
+      h3 {
+        margin: 1.61616rem 0 1rem;
+      }
+
+      h4 {
+        margin: 1.21212rem 0 1;
+      }
+
+      h5 {
+        margin: 0.80808rem 0;
+      }
+
+      h6 {
+        margin: 0.70707rem 0;
+      }
+
+      p {
+        margin: auto auto 1.5rem;
+      }
+
+      small {
+        font-size: 65%;
+      }
+
+      input,
+      abbr,
+      acronym,
+      blockquote,
+      code,
+      kbd,
+      q,
+      samp,
+      var {
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre {
+        white-space: pre;
+      }
+
+      pre code {
+        white-space: -moz-pre-wrap;
+        white-space: pre-wrap;
+      }
+
+      code {
+        white-space: pre;
+        font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+      }
+
+      abbr {
+        -webkit-font-variant: small-caps;
+        -moz-font-variant: small-caps;
+        -ms-font-variant: small-caps;
+        font-variant: small-caps;
+        font-weight: 600;
+        text-transform: lowercase;
+        color: gray;
+      }
+
+      abbr[title]:hover {
+        cursor: help;
+      }
+
+      /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        color: #444;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: auto;
+      }
+
+      code,
+      pre {
+        background-color: #f5f5f5;
+        color: #444;
+        border-radius: 2px;
+        text-shadow: 0px 1px 0px white;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      }
+
+      pre code {
+        border: none;
+        box-shadow: none;
+      }
+
+      pre {
+        padding: 0.5em;
+      }
+
+      code {
+        display: inline-block;
+        padding: 0 0.5em;
+        line-height: 1.4;
+        font-size: 0.9em;
+      }
+
+      table {
+        border-spacing: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      table th,
+      table td {
+        padding: 0.3em 0.7em;
+      }
+
+      table th {
+        background-color: #f4f4f4;
+        border-bottom: 2px solid #444;
+      }
+
+      table td {
+        border: 1px solid #f5f5f5;
+      }
+
+      /* Add transition to containers so they can push in and out. */
+
+      #layout,
+      #menu,
+      .menu-link {
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -ms-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+      }
+
+      /* This is the parent `<div>` that contains the menu and the content area. */
+
+      #layout {
+        position: relative;
+        padding-left: 0;
+      }
+
+      #layout.active #menu {
+        left: 250px;
+        width: 250px;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+
+      /* The content `<div>` is where all your content goes. */
+
+      .content {
+        margin: 50px auto;
+        padding: 0 2em;
+        max-width: 80ex;
+        line-height: 1.6em;
+      }
+
+      /*
+      The `#menu` `<div>` is the parent `<div>` that contains the menu that
+      appears on the left side of the page.
+      */
+
+      #menu {
+        margin-left: -250px;
+        /* "#menu" width */
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        /* so the menu or its navicon stays above all content */
+        background: #f4f4f4;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.9em;
+      }
+
+      @media print {
+        #menu,
+        .menu-link {
+          display: none !important;
+        }
+      }
+
+      a,
+      a * {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      a:visited {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      /* All anchors inside the menu should be styled like this. */
+
+      #menu a {
+        display: block;
+        padding: 0.5em 0.5em;
+      }
+
+      #menu a:first-letter {
+        text-transform: capitalize;
+      }
+
+      #menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 1em 0.5em;
+      }
+
+      #menu ul ul {
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        border-left: 4px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Change color of the anchor links on hover/focus. */
+
+      #menu li a:hover,
+      #menu li a:focus {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      /* This styles the selected menu item `<li>`. */
+
+      #menu li a.active {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      /* This styles a link within a selected menu item `<li>`. */
+
+      #menu li a.active {
+        color: #222;
+      }
+
+      /* This styles the menu heading. */
+
+      #menu li.heading {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      #menu li.heading > * {
+        padding: 0.5em;
+        display: block;
+      }
+
+      #menu li.heading a {
+        color: #0c68af;
+      }
+
+      /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+      /*
+      `.menu-link` represents the responsive menu toggle that shows/hides on
+      small screens.
+      */
+
+      .menu-link {
+        position: fixed;
+        display: block;
+        /* show this only on small screens */
+        top: 0;
+        left: 0;
+        /* "#menu width" */
+        font-size: 10px;
+        /* change this value to increase/decrease button size */
+        z-index: 10;
+        width: 2em;
+        height: auto;
+        padding: 1.6em 1.2em;
+        border-radius: 0 2px 2px 0;
+      }
+
+      .menu-link:hover {
+        background: #f4f4f4;
+      }
+
+      .menu-link span {
+        position: relative;
+        display: block;
+      }
+
+      .menu-link span,
+      .menu-link span:before,
+      .menu-link span:after {
+        background-color: #555;
+        width: 100%;
+        height: 0.2em;
+        border-radius: 1em;
+      }
+
+      .menu-link span:before,
+      .menu-link span:after {
+        position: absolute;
+        margin-top: -0.6em;
+        content: " ";
+      }
+
+      .menu-link span:after {
+        margin-top: 0.6em;
+      }
+
+      /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+      @media (min-width: 48em) {
+        .header,
+        .content {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+
+        #layout {
+          padding-left: 250px;
+          /* left col width "#menu" */
+          left: 0;
+        }
+        #menu {
+          left: 250px;
+        }
+
+        .menu-link {
+          position: fixed;
+          left: 250px;
+          display: none;
+        }
+
+        #layout.active .menu-link {
+          left: 250px;
+        }
+      }
+
+      @media (max-width: 48em) {
+        /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+         * Make the window small.
+         * Tap the menu to trigger the active state.
+         * Make the window large again.
+         */
+        #layout.active {
+          position: relative;
+          left: 250px;
+        }
+      }
+
+      /* Heading anchors and permalinks */
+      h1[id],
+      h2[id],
+      h3[id],
+      h4[id],
+      h5[id],
+      h6[id] {
+        position: relative;
+      }
+      .heading-anchor-permalink {
+        /* Position the permalink to the left of the title */
+        position: absolute;
+        right: 100%;
+        /* Add some spacing as padding to not lose the hover */
+        padding-right: 0.6rem;
+        /* Make it only visible on heading hover, see below */
+        opacity: 0;
+      }
+      h1[id]:hover .heading-anchor-permalink,
+      h2[id]:hover .heading-anchor-permalink,
+      h3[id]:hover .heading-anchor-permalink,
+      h4[id]:hover .heading-anchor-permalink,
+      h5[id]:hover .heading-anchor-permalink,
+      h6[id]:hover .heading-anchor-permalink {
+        opacity: 0.5;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div id="layout">
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+      <nav id="menu">
+        <ul>
+<li class="heading"><a class="active" href="index.html">ai summit</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../csdn-join/index.html">csdn join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../dataops-review/index.html">dataops review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../developer/index.html">developer</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../devops-review/index.html">devops review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../devops_mlops/index.html">devops mlops</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../dian-join/index.html">dian join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../features-store-v3/index.html">features store v3</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../fs-v4-review/index.html">fs v4 review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../lushouqun-confirm/index.html">lushouqun confirm</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mengniu-join/index.html">mengniu join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mengniu/index.html">mengniu</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mlops-commitee/index.html">mlops commitee</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../shenxin-join/index.html">shenxin join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../sql-boy/index.html">sql boy</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../talk-about-transition/index.html">talk about transition</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../transition-review/index.html">transition review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../zte-join/index.html">zte join</a></li>
+<ul>
+
+</ul>
+</ul>
+      </nav>
+      <article id="main" class="content">
+        <h1 id="aisummit-%E5%9B%BD%E5%86%85%E9%A6%96%E4%B8%AAmlops%E4%B8%93%E5%9C%BA%E5%9B%9E%E9%A1%BE%EF%BC%8C%E6%9C%80%E4%BD%B3%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C%E4%B8%8E%E5%89%8D%E6%B2%BF%E8%B6%8B%E5%8A%BF">AISummit 国内首个MLOps专场回顾，最佳实战经验与前沿趋势 <a class="heading-anchor-permalink" href="#aisummit-%E5%9B%BD%E5%86%85%E9%A6%96%E4%B8%AAmlops%E4%B8%93%E5%9C%BA%E5%9B%9E%E9%A1%BE%EF%BC%8C%E6%9C%80%E4%BD%B3%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C%E4%B8%8E%E5%89%8D%E6%B2%BF%E8%B6%8B%E5%8A%BF">#</a></h1>
+<p>2022-08-10 18:03 星策社区</p>
+<p>8月6日，AISummit 全球人工智能技术大会以线上直播形式如期开幕。近百位专家学者、技术大牛、管理精英齐聚一堂，与数万名参会者一起共话人工智能时代下的“数智”浪潮。</p>
+<h2 id="%E9%AB%98%E5%B1%8B%E5%BB%BA%E7%93%B4%EF%BC%8C%E8%A7%A3%E8%AF%BBai%E7%8E%B0%E7%8A%B6%E4%B8%8E%E8%B6%8B%E5%8A%BF">高屋建瓴，解读AI现状与趋势 <a class="heading-anchor-permalink" href="#%E9%AB%98%E5%B1%8B%E5%BB%BA%E7%93%B4%EF%BC%8C%E8%A7%A3%E8%AF%BBai%E7%8E%B0%E7%8A%B6%E4%B8%8E%E8%B6%8B%E5%8A%BF">#</a></h2>
+<p>开幕致辞中，<strong>51CTO副总裁兼总编崔康先生</strong>作为本次大会的总策划表达了对大会的期许。他认为，人工智发展至今，不再像是一门IT领域的细分技术，更像是一种通用技术。其发展虽然一路向好，但也需直面当前存在的诸多矛盾。本次大会希望为这些矛盾提供若干启发线索，找到一些解决路径。同时，也希望“这场大会能够告诉参会者，AI技术和AI开发者正在让世界变得更加美好”。</p>
+<p>主论坛中，中国人民大学高瓴人工智能学院副院长窦志成；Meta/Facebook 人工智能研究院研究员及高级经理田渊栋；科大讯飞研究院副院长潘青华；谷歌资深工程师及高级经理、MLPerf 团队负责人周宗伟；火山引擎机器学习系统负责人项亮；微软 Bing 广告文本生成算法负责人刘屹，6位重磅嘉宾站在技术领导者的角度解读了人工智能技术的现状与发展趋势、从业者需要关注的最新研究成果以及前沿技术在业界产生的影响。</p>
+<h2 id="%E5%A4%9A%E7%BB%B4%E8%A7%A3%E8%AF%BB%EF%BC%8C%E5%88%86%E8%AE%BA%E5%9D%9B%E4%BA%AE%E7%82%B9%E9%87%8D%E7%82%B9%E7%9C%8B">多维解读，分论坛亮点重点看 <a class="heading-anchor-permalink" href="#%E5%A4%9A%E7%BB%B4%E8%A7%A3%E8%AF%BB%EF%BC%8C%E5%88%86%E8%AE%BA%E5%9D%9B%E4%BA%AE%E7%82%B9%E9%87%8D%E7%82%B9%E7%9C%8B">#</a></h2>
+<p>大会首日的四场分论坛精彩纷呈、高潮迭起。“AI驱动下的搜索与推荐”、“MLOps 最佳实践”、“机器学习性能优化之路”、“计算机视觉应用与创新”四大议题共包含16个细分话题方向。其中“ MLOps 最佳实践” 专题为星策社区与 51CTO 联合主办的国内首个MLOps主题专场，下文将详细回顾该专题内容。</p>
+<p><img src="./img/1.png" alt="img"></p>
+<p>人工智能在企业规模化应用中，存在研发上线周期长、数据和模型难匹配等挑战。MLOps 应运而生。在“ MLOps 最佳实践”分论坛，专家们围绕研发运维周期、持续训练和持续监控、模型版本和血缘、数据线上线下一致性、高效数据供给等热点方向，探讨了 MLOps 的实践经验和前沿趋势。</p>
+<p>星策社区发起人、开放原子基金会 TOC 副主席、LF AI &amp; Data TAC 成员谭中意作为本会场出品人，分享了 “从 model centric 到 data centric—MLOps 帮助 AI 多快好省到落地” ，重点介绍了 MLOps 的概念、定位、主要内容、常见项目，以及评估一个 AI 团队 MLOps 的能力和水平的标准。</p>
+<p><img src="./img/img2.png" alt="img"></p>
+<p>第四范式系统架构师、OpenMLDB 研发负责人卢冕在本次大会中分享了“开源机器学习数据库 OpenMLDB ：线上线下一致的生产级特征平台”，围绕开源机器学习数据库 OpenMLDB，分析了其如何实现机器学习特征开发即上线的目标，及如何保证特征计算的正确性、高效性。</p>
+<p><img src="./img/img3.png" alt="img"></p>
+<p>网易云音乐人工智能研究员、技术总监吴官林在本次大会中，分享了“网易云音乐特征平台技术实践”，从云音乐业务背景出发，阐释模型实时化落地方案、结合 FeatureStore 进一步辐射到更多场景的思考，分享在特征存储上结合业务落地的改造实践。</p>
+<p><img src="./img/img4.png" alt="img"></p>
+<p>中国工商银行软件开发中心大数据和人工智能实验室副主任黄炳在此次大会中，分享了“筑牢金融智能化创新发展的人工智能新基建—工商银行 MLOps 实践”， 重点介绍了工商银行涵盖模型研发、模型交付、模型管理、模型迭代运营的全生命周期管理体系的建设流程及技术实践。</p>
+<p><img src="./img/img5.jpeg" alt="img"></p>
+<p>以本次 AISummit 大会为契机，后续，星策社区将持续关注 MLOps 技术赛道及 BI + AI 开源生态、定期举办或参与企业转型、MLOps 交流活动，不断提升社区影响力。同时也将和 51CTO 继续合作，开展更多探索和尝试，为广大技术人员搭建一个人工智能领域的深度交流与分享平台，敬请期待。也欢迎大家持续关注星策社区进展并加入我们。</p>
+<p>MLOps专题完整视频回顾：<a href="https://space.bilibili.com/1209377375/channel/collectiondetail?sid=623645">https://space.bilibili.com/1209377375/channel/collectiondetail?sid=623645</a></p>
+
+      </article>
+    </div>
+    <script>
+      // Load contents.json if you need it
+    </script>
+    <script>
+      // FROM http://purecss.io/js/ui.js
+      (function(window, document) {
+        var layout = document.getElementById("layout"),
+          menu = document.getElementById("menu"),
+          menuLink = document.getElementById("menuLink");
+
+        function toggleClass(element, className) {
+          var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+          for (; i < length; i++) {
+            if (classes[i] === className) {
+              classes.splice(i, 1);
+              break;
+            }
+          }
+          // The className is not found
+          if (length === classes.length) {
+            classes.push(className);
+          }
+
+          element.className = classes.join(" ");
+        }
+
+        menuLink.onclick = function(e) {
+          var active = "active";
+
+          e.preventDefault();
+          toggleClass(layout, active);
+          toggleClass(menu, active);
+          toggleClass(menuLink, active);
+        };
+      })(this, this.document);
+    </script>
+  </body>
+</html>

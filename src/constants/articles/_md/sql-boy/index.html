@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-rendering: optimizeLegibility;
+        line-height: 1;
+        margin-top: 0;
+        color: #222;
+      }
+
+      blockquote + figcaption cite {
+        display: block;
+        font-size: inherit;
+        text-align: right;
+      }
+
+      body {
+        word-wrap: break-word;
+      }
+
+      pre code {
+        word-wrap: normal;
+      }
+
+      body {
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        color: #444;
+      }
+
+      h1 {
+        font-size: 2em;
+        /* 2*16 = 32 */
+      }
+
+      h2 {
+        font-size: 1.5em;
+        /* 1.5*16 = 24 */
+      }
+
+      h3 {
+        font-size: 1.17em;
+        /* 1.17*16 = 18.72 */
+      }
+
+      h4 {
+        font-size: 1em;
+        /* 1*16 = 16 */
+      }
+
+      h5 {
+        font-size: 0.83em;
+        /* 0.83*16 = 13.28 */
+      }
+
+      h6 {
+        font-size: 0.75em;
+        /* 0.75*16 = 12 */
+      }
+
+      h1 {
+        margin: 2.42424rem 0 1.454544rem;
+      }
+
+      h2 {
+        margin: 2.0202rem 0 1.21212rem;
+      }
+
+      h3 {
+        margin: 1.61616rem 0 1rem;
+      }
+
+      h4 {
+        margin: 1.21212rem 0 1;
+      }
+
+      h5 {
+        margin: 0.80808rem 0;
+      }
+
+      h6 {
+        margin: 0.70707rem 0;
+      }
+
+      p {
+        margin: auto auto 1.5rem;
+      }
+
+      small {
+        font-size: 65%;
+      }
+
+      input,
+      abbr,
+      acronym,
+      blockquote,
+      code,
+      kbd,
+      q,
+      samp,
+      var {
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre {
+        white-space: pre;
+      }
+
+      pre code {
+        white-space: -moz-pre-wrap;
+        white-space: pre-wrap;
+      }
+
+      code {
+        white-space: pre;
+        font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+      }
+
+      abbr {
+        -webkit-font-variant: small-caps;
+        -moz-font-variant: small-caps;
+        -ms-font-variant: small-caps;
+        font-variant: small-caps;
+        font-weight: 600;
+        text-transform: lowercase;
+        color: gray;
+      }
+
+      abbr[title]:hover {
+        cursor: help;
+      }
+
+      /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        color: #444;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: auto;
+      }
+
+      code,
+      pre {
+        background-color: #f5f5f5;
+        color: #444;
+        border-radius: 2px;
+        text-shadow: 0px 1px 0px white;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      }
+
+      pre code {
+        border: none;
+        box-shadow: none;
+      }
+
+      pre {
+        padding: 0.5em;
+      }
+
+      code {
+        display: inline-block;
+        padding: 0 0.5em;
+        line-height: 1.4;
+        font-size: 0.9em;
+      }
+
+      table {
+        border-spacing: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      table th,
+      table td {
+        padding: 0.3em 0.7em;
+      }
+
+      table th {
+        background-color: #f4f4f4;
+        border-bottom: 2px solid #444;
+      }
+
+      table td {
+        border: 1px solid #f5f5f5;
+      }
+
+      /* Add transition to containers so they can push in and out. */
+
+      #layout,
+      #menu,
+      .menu-link {
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -ms-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+      }
+
+      /* This is the parent `<div>` that contains the menu and the content area. */
+
+      #layout {
+        position: relative;
+        padding-left: 0;
+      }
+
+      #layout.active #menu {
+        left: 250px;
+        width: 250px;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+
+      /* The content `<div>` is where all your content goes. */
+
+      .content {
+        margin: 50px auto;
+        padding: 0 2em;
+        max-width: 80ex;
+        line-height: 1.6em;
+      }
+
+      /*
+      The `#menu` `<div>` is the parent `<div>` that contains the menu that
+      appears on the left side of the page.
+      */
+
+      #menu {
+        margin-left: -250px;
+        /* "#menu" width */
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        /* so the menu or its navicon stays above all content */
+        background: #f4f4f4;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.9em;
+      }
+
+      @media print {
+        #menu,
+        .menu-link {
+          display: none !important;
+        }
+      }
+
+      a,
+      a * {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      a:visited {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      /* All anchors inside the menu should be styled like this. */
+
+      #menu a {
+        display: block;
+        padding: 0.5em 0.5em;
+      }
+
+      #menu a:first-letter {
+        text-transform: capitalize;
+      }
+
+      #menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 1em 0.5em;
+      }
+
+      #menu ul ul {
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        border-left: 4px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Change color of the anchor links on hover/focus. */
+
+      #menu li a:hover,
+      #menu li a:focus {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      /* This styles the selected menu item `<li>`. */
+
+      #menu li a.active {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      /* This styles a link within a selected menu item `<li>`. */
+
+      #menu li a.active {
+        color: #222;
+      }
+
+      /* This styles the menu heading. */
+
+      #menu li.heading {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      #menu li.heading > * {
+        padding: 0.5em;
+        display: block;
+      }
+
+      #menu li.heading a {
+        color: #0c68af;
+      }
+
+      /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+      /*
+      `.menu-link` represents the responsive menu toggle that shows/hides on
+      small screens.
+      */
+
+      .menu-link {
+        position: fixed;
+        display: block;
+        /* show this only on small screens */
+        top: 0;
+        left: 0;
+        /* "#menu width" */
+        font-size: 10px;
+        /* change this value to increase/decrease button size */
+        z-index: 10;
+        width: 2em;
+        height: auto;
+        padding: 1.6em 1.2em;
+        border-radius: 0 2px 2px 0;
+      }
+
+      .menu-link:hover {
+        background: #f4f4f4;
+      }
+
+      .menu-link span {
+        position: relative;
+        display: block;
+      }
+
+      .menu-link span,
+      .menu-link span:before,
+      .menu-link span:after {
+        background-color: #555;
+        width: 100%;
+        height: 0.2em;
+        border-radius: 1em;
+      }
+
+      .menu-link span:before,
+      .menu-link span:after {
+        position: absolute;
+        margin-top: -0.6em;
+        content: " ";
+      }
+
+      .menu-link span:after {
+        margin-top: 0.6em;
+      }
+
+      /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+      @media (min-width: 48em) {
+        .header,
+        .content {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+
+        #layout {
+          padding-left: 250px;
+          /* left col width "#menu" */
+          left: 0;
+        }
+        #menu {
+          left: 250px;
+        }
+
+        .menu-link {
+          position: fixed;
+          left: 250px;
+          display: none;
+        }
+
+        #layout.active .menu-link {
+          left: 250px;
+        }
+      }
+
+      @media (max-width: 48em) {
+        /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+         * Make the window small.
+         * Tap the menu to trigger the active state.
+         * Make the window large again.
+         */
+        #layout.active {
+          position: relative;
+          left: 250px;
+        }
+      }
+
+      /* Heading anchors and permalinks */
+      h1[id],
+      h2[id],
+      h3[id],
+      h4[id],
+      h5[id],
+      h6[id] {
+        position: relative;
+      }
+      .heading-anchor-permalink {
+        /* Position the permalink to the left of the title */
+        position: absolute;
+        right: 100%;
+        /* Add some spacing as padding to not lose the hover */
+        padding-right: 0.6rem;
+        /* Make it only visible on heading hover, see below */
+        opacity: 0;
+      }
+      h1[id]:hover .heading-anchor-permalink,
+      h2[id]:hover .heading-anchor-permalink,
+      h3[id]:hover .heading-anchor-permalink,
+      h4[id]:hover .heading-anchor-permalink,
+      h5[id]:hover .heading-anchor-permalink,
+      h6[id]:hover .heading-anchor-permalink {
+        opacity: 0.5;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div id="layout">
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+      <nav id="menu">
+        <ul>
+<li class="heading"><a class="" href="../ai-summit/index.html">ai summit</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../csdn-join/index.html">csdn join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../dataops-review/index.html">dataops review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../developer/index.html">developer</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../devops-review/index.html">devops review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../devops_mlops/index.html">devops mlops</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../dian-join/index.html">dian join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../features-store-v3/index.html">features store v3</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../fs-v4-review/index.html">fs v4 review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../lushouqun-confirm/index.html">lushouqun confirm</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mengniu-join/index.html">mengniu join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mengniu/index.html">mengniu</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mlops-commitee/index.html">mlops commitee</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../shenxin-join/index.html">shenxin join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="active" href="index.html">sql boy</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../talk-about-transition/index.html">talk about transition</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../transition-review/index.html">transition review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../zte-join/index.html">zte join</a></li>
+<ul>
+
+</ul>
+</ul>
+      </nav>
+      <article id="main" class="content">
+        <p><em>7月10日，由星策社区主办的第三期「MLOps Meetup」于线上开展，本次活动由51CTO、开源中国、CSDN、思否、示说网、云原生社区同步直播，累计观看人次<strong>1.5w+</strong> 。</em></p>
+<p><em>活动围绕“如何使用 SQL 实现工业级机器学习全流程”，星策社区发起人—<strong>谭中意</strong>，为本次活动进行开场，同时介绍了“ SQL boy 也可以做AI ”的活动背景；开源项目OpenMLDB PMC、第四范式平台架构师—<strong>陈迪豪</strong>，介绍如何用 SQL 实现特征工程；百度飞桨、EDL、SQLFlow、Couler 核心开发者贡献者—<strong>武毅</strong>，分享如何用 SQL 做模型训练与预测；Byzer社区PMC、Kyligence技术合伙人—<strong>祝海林</strong>，介绍如何用 SQL 完成端到端机器学习流程。</em></p>
+<p>🌟本文根据四位老师分享的重点内容整理而成，视频回顾见文章末尾，PPT获取请关注公众号「星策开源」并回复「0710」</p>
+<h2 id="part1%EF%BC%9Asql-boy-%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%81%9A-ai-%E2%80%94%E8%B0%AD%E4%B8%AD%E6%84%8F">Part1：SQL Boy 也可以做 AI —谭中意 <a class="heading-anchor-permalink" href="#part1%EF%BC%9Asql-boy-%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%81%9A-ai-%E2%80%94%E8%B0%AD%E4%B8%AD%E6%84%8F">#</a></h2>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0c44598596564c68b4c704df8e3724cf~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
+<p><strong>为什么 SQL 如今仍在流行？</strong></p>
+<p>SQL 从1978年发展至今仍在业界非常流行，原因有以下几点：首先，SQL 是一种声明式编程语言，它只需表达想要得到的结果，而不用关心具体实现的过程。其次，SQL 是标准化的，只要是符合标准（ANSI等）的SQL，在不同的机器与环境下都可以运行，并得到同样的结果。最后，SQL 最大的优点就是简单，工程师可以很容易学习和使用。</p>
+<p><strong>SQL 的用途</strong></p>
+<p>SQL 的用途很广，比如在传统的企业业务系统里，用MySQL数据库或微软 SQL 数据库等做CRUD的应用。大数据的数据分析领域，有 Spark SQL 、HiveSQL 等。除此之外，SQL 的应用也能涉及机器学习领域，它可以实现特征工程、模型训练，甚至可以做端到端的机器学习。本次 Meetup 就将介绍如何用 SQL 完成这些。</p>
+<h2 id="part2%EF%BC%9Aopenmldb%E2%80%94%E4%BB%A5sql%E4%B8%BA%E6%A0%B8%E5%BF%83%E7%9A%84%E7%BA%BF%E4%B8%8A%E7%BA%BF%E4%B8%8B%E4%B8%80%E8%87%B4%E6%80%A7%E7%89%B9%E5%BE%81%E5%B9%B3%E5%8F%B0%E2%80%94%E9%99%88%E8%BF%AA%E8%B1%AA">Part2：OpenMLDB—以SQL为核心的线上线下一致性特征平台—陈迪豪 <a class="heading-anchor-permalink" href="#part2%EF%BC%9Aopenmldb%E2%80%94%E4%BB%A5sql%E4%B8%BA%E6%A0%B8%E5%BF%83%E7%9A%84%E7%BA%BF%E4%B8%8A%E7%BA%BF%E4%B8%8B%E4%B8%80%E8%87%B4%E6%80%A7%E7%89%B9%E5%BE%81%E5%B9%B3%E5%8F%B0%E2%80%94%E9%99%88%E8%BF%AA%E8%B1%AA">#</a></h2>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/14f1321f5cef40df9c3c80e40c79e642~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
+<p><strong>人工智能工程化落地的数据和特征挑战</strong></p>
+<p>根据 Gartner 的调查统计，如今人工智能领域中95%的时间精力都花费在数据上，如何正确、高效的 AI 数据和特征供给成为数据侧的新挑战。机器学习应用从开发到上线的全流程（MLOps）可以分成离线开发与线上服务两个过程，这两个过程分别包含：DataOps、FeatureOps、ModelOps三个步骤。其中特征问题尤为棘手，如 FeatureOps（特征工程）中线上线下一致性校验带来的高昂工程化落地成本问题。为了解决这一问题：1%的头部企业选择耗费上千小时自研构建平台，非头部企业有的则会采购昂贵的 SaaS 工具和服务，而OpenMLDB 提供了另一种解决方案，它以 SQL 为核心，提供了低成本、高效的线上线下一致性生产级特征计算平台。</p>
+<p><strong>OpenMLDB 用 SQL 完成开发即上线</strong></p>
+<p>OpenMLDB是一个开源机器学习数据库，提供了线上线下一致的特征平台，他的整体架构如下图所示，与 AI 应用落地所需要的工具链一样，整体框架分为离线与在线两部分，分别提供了基于Spark++ 的批处理 SQL 引擎与基于自研时序数据库的实时SQL引擎，中间层提供了基于 SQL 的一致性执行计划生成器。总结来看，通过 OpenMLDB 开发者只要会写 SQL，只需三步，即可完成开发即上线的过程。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/77ff6938bb594ddc93ea7ed3e77616f1~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
+<p><strong>以SQL为核心的开发和管理体验</strong></p>
+<p>使用OpenMDLB，SQL boy 也可以做机器学习。如下图所示 OpenMLDB 的命令行与 SQL 命令行类似，进入 OpenMLDB CLI 后，用户可以直接执行 SQL 语句做离线特征计算，同时通过 Deploy 语句将 SQL 方案上线，上线完成后即可在客户端做线上请求。整个使用体验均基于 SQL ，降低了机器学习特征工程部分的使用门槛。</p>
+<p>​OpenMLDB GitHub（​<a href="https://github.com/4paradigm/OpenMLDB">​https://github.com/4paradigm/OpenMLDB​</a>​）</p>
+<p><strong>Part3：从 SQLFlow 到 “3-FLow”—武毅</strong></p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5a4bec8ccd8c44e8b5abfe967fbd2304~tplv-k3u1fbpfcp-watermark.image?" alt="1 (2).png">
+<strong>SQLFLow</strong></p>
+<p>SQLFlow 是一个编译器，它可以将 SQL 程序编译为在 Kubernetes上运行的工作流。该输入是一个SQL程序，用扩展SQL语法编写，以支持AI作业，包括培训、预测、模型评估、模型解释、自定义作业和数学编程。输出是在分布式Kubernetes集群上运行的Argo工作流。同时，SQLFlow支持各种数据库系统，如 MySQL、MariaDB、TiDB、Hive、MaxCompute 以及许多机器学习工具包，如TensorFlow、Keras、XGBoost等。</p>
+<p><strong>为什么使用SQLFLow</strong></p>
+<p>众所周知，使用 SQL 实现 AI 计算不需要了解具体的计算细节，只需要定义要去训什么样的模型及参数，就可以完成整体的训练。SQLFlow 的目标就是为了降低整体机器学习和 AI 应用构建多门槛，同时它还是 Declarative 和 imperative 并存的，SQLFLow 可以更 High Level 的定义整个模型及数据的流向。</p>
+<p><strong>SQLFLow优势</strong></p>
+<p>如下图所示，SQLFLow 在对标 Microsoft SQL Server、Teradata SQL for DL 及Google BigQuery 上拥有以下四个优势：它可以适配主流数据库系统、适配每个数据库系统的语法方言、定义扩展语法完成训练/预测/解释/线性规划、同时还能模型库/自定义模型的功能。</p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/84209f5b0b9f41c1add758ccf48d12f9~tplv-k3u1fbpfcp-watermark.image?" alt="企业微信截图_d5276e51-dd54-4456-aea1-f059c1367a4b.png">
+其中，关于SQLFLow 如何详细训练 DNN 等 DL 模型、自动调整参数、训练 XGBoost 模型、执行预测、模型解释 (SHAP)、使用模型库中的模型/自定义模型、求解线性规划问题(linear programming)、运行自定义程序等设计细节可查看文章末尾完整视频。</p>
+<p><strong>在MLOps上的实现</strong></p>
+<p>“3-Flow”是 KubeFlow、MLFlow、SQLFlow的整合，可以覆盖 MLOps 里大部分的流程。目前该项目使用 Helm Chart 在其他环境快速安装和配置 Kubeflow，SQLFlow 的加入完成了一体化部署以及对应功能。未来，将加入 ParaFlow SDK等模块，继续完善其MLOps功能。</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e5729f07ce9b4a689a42092c23a1c29f~tplv-k3u1fbpfcp-watermark.image?" alt="企业微信截图_698a837c-a24c-4050-972b-1b13f2ffea4c.png"></p>
+<p>SQLFLow GitHub（<a href="https://github.com/sql-machine-learning/sqlflow%EF%BC%89">https://github.com/sql-machine-learning/sqlflow）</a></p>
+<p><strong>Part4：OpenMLDB + Byzer 使用 SQL完成端到端机器学习流程”—祝海林</strong></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/939508d5953046ef8f439bb8c01ff4da~tplv-k3u1fbpfcp-watermark.image?" alt="1 (4).png">
+<strong>Byzer是什么</strong></p>
+<p>Byzer是一门面向 Data+AI 领域的云原生类 SQL语言。目前，Byzer 支持 ETL ，数据挖掘和分析， 机器学习建模，模型部署。使用 Byzer ﻿就能轻易完成整个机器学习的Pipline，这包括：加载数据、处理数据、模型训练（支持多组参数，模型版本等）、批量预测、模型评估、部署API服务。架构图如下。</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ec7a76070d6b4a1f8cb8c3e68977f3fc~tplv-k3u1fbpfcp-watermark.image?" alt="企业微信截图_a9b86f3e-95fb-457f-ba83-0a2b142aeac0.png">
+<strong>为什么需要Byzer</strong></p>
+<p>如今，大数据和 AI 的门槛仍然很高，平台割裂，语言割裂，维护困难，使用困难等问题让很多人望而却步。Byzer 的出现可以帮助企业和个人都能够最低成本地挖掘数据的价值，极大降低 Data + AI 门槛。</p>
+<p><strong>Byzer + OpenMLDB</strong></p>
+<p>虽然目前，Byzer 已经可以实现几乎不需要编程就能完成整个机器学习的Pipeline。但对于特征工程，尤其实时在线特征计算这块，Byzer 目前还有软肋。所以在引入 OpenMLDB 之后，完美解决了 Byzer 在特征工程方面的短板。活动中详细演示了以Kaggle出租车行车时间预测问题为例，如何使用OpenMLDB和 Byzer 联合来打造完整机器学习应用，涵盖湖仓数据加载，特征计算，模型训练，部署，及对外以 Rest API 提供端到端的预测能力，可查看文章末尾完整视频。</p>
+<p>总结来看，使用 OpenMLDB+ Byzer 的过程，让整个特征计算通过 FeatureStoreExt 插件转化到 OpenMLDB 中进行计算。Online 部分通过 Rest 函数实时请求 OpenMLDB 获得特征值。Byzer 作为流式处理，可以将数据规整化写入 Kafka 再进入 OpenMLDB。由此可以发现，Byzer 的使用非常具有扩展性，可以让算法工程师/数据工程师/分析师等在 Notebook 中衔接更多的生态进来。</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/03d6a67a2a9440999544946762c6fea0~tplv-k3u1fbpfcp-watermark.image?" alt="企业微信截图_3daacaa1-1e7a-47d6-839f-4f79625360e4.png">
+Byzer GitHub（<a href="https://github.com/byzer-org/byzer-lang%EF%BC%89">https://github.com/byzer-org/byzer-lang）</a></p>
+<p><strong>总结</strong></p>
+<p>随着人工智能领域的持续发展和技术的迭代演进，机器学习不再是大家触不可及的领域，工程师可以通过一些如 SQL 这样更简单、易用、低门槛的编程语言，通过像 OpenMLDB /SQLFlow / Byzer 等开源工具，快速实现机器学习应用全流程，解决机器学习各阶段难题。相信在未来，AI的落地会越来越简单，落地速度也将越来越快。本次活动中各家的实现细节可观看完整视频回放，希望大家有所收获。</p>
+<p>最后，欢迎大家持续关注 MLOps ，加入<a href="https://sourl.cn/vZ2Jhv">MLOps爱好者交流群</a>和我们一起讨论相关内容。</p>
+<ul>
+<li>
+<p>SQL也能玩转工业级AI ！——谭中意</p>
+<p><a href="https://www.bilibili.com/video/BV14g411f7Ut/%5C">https://www.bilibili.com/video/BV14g411f7Ut/\</a></p>
+</li>
+<li>
+<p>OpenMLDB以SQL为核心的线上线下一致性特征平台——陈迪豪\</p>
+<p><a href="https://www.bilibili.com/video/BV1eg411f7sC/">https://www.bilibili.com/video/BV1eg411f7sC/</a></p>
+</li>
+<li>
+<p>从 SQLFlow 到 “3-FLow”用SQL完成 AI 建模——武毅\</p>
+<p><a href="https://www.bilibili.com/video/BV1hT411g7hz/">https://www.bilibili.com/video/BV1hT411g7hz/</a></p>
+</li>
+<li>
+<p>OpenMLDB + Byzer 用SQL完成端到端机器学习全流程！——祝海林\</p>
+<p><a href="https://www.bilibili.com/video/BV1te4y1R7yn/">https://www.bilibili.com/video/BV1te4y1R7yn/</a></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>动作</th>
+<th>台词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>某电商网站热门推荐功能上线，第一周，用户点击率高，模型上线效果不错</td>
+<td>产品经理+AI科学家举杯同庆；AI工程师刚刚结束加班</td>
+<td>产品经理：用户点击率很高，推荐的很精准嘛；AI科学家：哈哈！小意思</td>
+</tr>
+<tr>
+<td>上线一周后，效果越来越差</td>
+<td>复盘追责</td>
+<td>产品经理：怎么回事，推荐效果越来越差？用户点击率下来了？什么原因？ ；AI科学家：我们模型肯定没问题啊，是不是他们上线优化的时候出问题了？；AI工程师：你们模型不标准，我们优化半天好不容易上线了，完还背锅了？？？？</td>
+</tr>
+<tr>
+<td>工程师费解</td>
+<td>社群求助</td>
+<td>又背锅了！模型上线后效果差，怎么总让我们背锅，有没有同感？</td>
+</tr>
+<tr>
+<td>社群讨论吐槽纷纷有此经历</td>
+<td>扫地僧出现</td>
+<td>社群中扫地僧：上线过程没有问题的话，应该跟pm建议重新训练模型，别白背锅了！</td>
+</tr>
+<tr>
+<td>如果你也是AI工程师，爱讨论，爱交流，欢迎加入星策社区交流群～讨论技术，交流吐槽～</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+      </article>
+    </div>
+    <script>
+      // Load contents.json if you need it
+    </script>
+    <script>
+      // FROM http://purecss.io/js/ui.js
+      (function(window, document) {
+        var layout = document.getElementById("layout"),
+          menu = document.getElementById("menu"),
+          menuLink = document.getElementById("menuLink");
+
+        function toggleClass(element, className) {
+          var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+          for (; i < length; i++) {
+            if (classes[i] === className) {
+              classes.splice(i, 1);
+              break;
+            }
+          }
+          // The className is not found
+          if (length === classes.length) {
+            classes.push(className);
+          }
+
+          element.className = classes.join(" ");
+        }
+
+        menuLink.onclick = function(e) {
+          var active = "active";
+
+          e.preventDefault();
+          toggleClass(layout, active);
+          toggleClass(menu, active);
+          toggleClass(menuLink, active);
+        };
+      })(this, this.document);
+    </script>
+  </body>
+</html>

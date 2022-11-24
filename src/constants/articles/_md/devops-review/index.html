@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-rendering: optimizeLegibility;
+        line-height: 1;
+        margin-top: 0;
+        color: #222;
+      }
+
+      blockquote + figcaption cite {
+        display: block;
+        font-size: inherit;
+        text-align: right;
+      }
+
+      body {
+        word-wrap: break-word;
+      }
+
+      pre code {
+        word-wrap: normal;
+      }
+
+      body {
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        color: #444;
+      }
+
+      h1 {
+        font-size: 2em;
+        /* 2*16 = 32 */
+      }
+
+      h2 {
+        font-size: 1.5em;
+        /* 1.5*16 = 24 */
+      }
+
+      h3 {
+        font-size: 1.17em;
+        /* 1.17*16 = 18.72 */
+      }
+
+      h4 {
+        font-size: 1em;
+        /* 1*16 = 16 */
+      }
+
+      h5 {
+        font-size: 0.83em;
+        /* 0.83*16 = 13.28 */
+      }
+
+      h6 {
+        font-size: 0.75em;
+        /* 0.75*16 = 12 */
+      }
+
+      h1 {
+        margin: 2.42424rem 0 1.454544rem;
+      }
+
+      h2 {
+        margin: 2.0202rem 0 1.21212rem;
+      }
+
+      h3 {
+        margin: 1.61616rem 0 1rem;
+      }
+
+      h4 {
+        margin: 1.21212rem 0 1;
+      }
+
+      h5 {
+        margin: 0.80808rem 0;
+      }
+
+      h6 {
+        margin: 0.70707rem 0;
+      }
+
+      p {
+        margin: auto auto 1.5rem;
+      }
+
+      small {
+        font-size: 65%;
+      }
+
+      input,
+      abbr,
+      acronym,
+      blockquote,
+      code,
+      kbd,
+      q,
+      samp,
+      var {
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre {
+        white-space: pre;
+      }
+
+      pre code {
+        white-space: -moz-pre-wrap;
+        white-space: pre-wrap;
+      }
+
+      code {
+        white-space: pre;
+        font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+      }
+
+      abbr {
+        -webkit-font-variant: small-caps;
+        -moz-font-variant: small-caps;
+        -ms-font-variant: small-caps;
+        font-variant: small-caps;
+        font-weight: 600;
+        text-transform: lowercase;
+        color: gray;
+      }
+
+      abbr[title]:hover {
+        cursor: help;
+      }
+
+      /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        color: #444;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: auto;
+      }
+
+      code,
+      pre {
+        background-color: #f5f5f5;
+        color: #444;
+        border-radius: 2px;
+        text-shadow: 0px 1px 0px white;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      }
+
+      pre code {
+        border: none;
+        box-shadow: none;
+      }
+
+      pre {
+        padding: 0.5em;
+      }
+
+      code {
+        display: inline-block;
+        padding: 0 0.5em;
+        line-height: 1.4;
+        font-size: 0.9em;
+      }
+
+      table {
+        border-spacing: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      table th,
+      table td {
+        padding: 0.3em 0.7em;
+      }
+
+      table th {
+        background-color: #f4f4f4;
+        border-bottom: 2px solid #444;
+      }
+
+      table td {
+        border: 1px solid #f5f5f5;
+      }
+
+      /* Add transition to containers so they can push in and out. */
+
+      #layout,
+      #menu,
+      .menu-link {
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -ms-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+      }
+
+      /* This is the parent `<div>` that contains the menu and the content area. */
+
+      #layout {
+        position: relative;
+        padding-left: 0;
+      }
+
+      #layout.active #menu {
+        left: 250px;
+        width: 250px;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+
+      /* The content `<div>` is where all your content goes. */
+
+      .content {
+        margin: 50px auto;
+        padding: 0 2em;
+        max-width: 80ex;
+        line-height: 1.6em;
+      }
+
+      /*
+      The `#menu` `<div>` is the parent `<div>` that contains the menu that
+      appears on the left side of the page.
+      */
+
+      #menu {
+        margin-left: -250px;
+        /* "#menu" width */
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        /* so the menu or its navicon stays above all content */
+        background: #f4f4f4;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.9em;
+      }
+
+      @media print {
+        #menu,
+        .menu-link {
+          display: none !important;
+        }
+      }
+
+      a,
+      a * {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      a:visited {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      /* All anchors inside the menu should be styled like this. */
+
+      #menu a {
+        display: block;
+        padding: 0.5em 0.5em;
+      }
+
+      #menu a:first-letter {
+        text-transform: capitalize;
+      }
+
+      #menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 1em 0.5em;
+      }
+
+      #menu ul ul {
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        border-left: 4px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Change color of the anchor links on hover/focus. */
+
+      #menu li a:hover,
+      #menu li a:focus {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      /* This styles the selected menu item `<li>`. */
+
+      #menu li a.active {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      /* This styles a link within a selected menu item `<li>`. */
+
+      #menu li a.active {
+        color: #222;
+      }
+
+      /* This styles the menu heading. */
+
+      #menu li.heading {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      #menu li.heading > * {
+        padding: 0.5em;
+        display: block;
+      }
+
+      #menu li.heading a {
+        color: #0c68af;
+      }
+
+      /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+      /*
+      `.menu-link` represents the responsive menu toggle that shows/hides on
+      small screens.
+      */
+
+      .menu-link {
+        position: fixed;
+        display: block;
+        /* show this only on small screens */
+        top: 0;
+        left: 0;
+        /* "#menu width" */
+        font-size: 10px;
+        /* change this value to increase/decrease button size */
+        z-index: 10;
+        width: 2em;
+        height: auto;
+        padding: 1.6em 1.2em;
+        border-radius: 0 2px 2px 0;
+      }
+
+      .menu-link:hover {
+        background: #f4f4f4;
+      }
+
+      .menu-link span {
+        position: relative;
+        display: block;
+      }
+
+      .menu-link span,
+      .menu-link span:before,
+      .menu-link span:after {
+        background-color: #555;
+        width: 100%;
+        height: 0.2em;
+        border-radius: 1em;
+      }
+
+      .menu-link span:before,
+      .menu-link span:after {
+        position: absolute;
+        margin-top: -0.6em;
+        content: " ";
+      }
+
+      .menu-link span:after {
+        margin-top: 0.6em;
+      }
+
+      /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+      @media (min-width: 48em) {
+        .header,
+        .content {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+
+        #layout {
+          padding-left: 250px;
+          /* left col width "#menu" */
+          left: 0;
+        }
+        #menu {
+          left: 250px;
+        }
+
+        .menu-link {
+          position: fixed;
+          left: 250px;
+          display: none;
+        }
+
+        #layout.active .menu-link {
+          left: 250px;
+        }
+      }
+
+      @media (max-width: 48em) {
+        /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+         * Make the window small.
+         * Tap the menu to trigger the active state.
+         * Make the window large again.
+         */
+        #layout.active {
+          position: relative;
+          left: 250px;
+        }
+      }
+
+      /* Heading anchors and permalinks */
+      h1[id],
+      h2[id],
+      h3[id],
+      h4[id],
+      h5[id],
+      h6[id] {
+        position: relative;
+      }
+      .heading-anchor-permalink {
+        /* Position the permalink to the left of the title */
+        position: absolute;
+        right: 100%;
+        /* Add some spacing as padding to not lose the hover */
+        padding-right: 0.6rem;
+        /* Make it only visible on heading hover, see below */
+        opacity: 0;
+      }
+      h1[id]:hover .heading-anchor-permalink,
+      h2[id]:hover .heading-anchor-permalink,
+      h3[id]:hover .heading-anchor-permalink,
+      h4[id]:hover .heading-anchor-permalink,
+      h5[id]:hover .heading-anchor-permalink,
+      h6[id]:hover .heading-anchor-permalink {
+        opacity: 0.5;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div id="layout">
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+      <nav id="menu">
+        <ul>
+<li class="heading"><a class="" href="../ai-summit/index.html">ai summit</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../csdn-join/index.html">csdn join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../dataops-review/index.html">dataops review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../developer/index.html">developer</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="active" href="index.html">devops review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../devops_mlops/index.html">devops mlops</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../dian-join/index.html">dian join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../features-store-v3/index.html">features store v3</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../fs-v4-review/index.html">fs v4 review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../lushouqun-confirm/index.html">lushouqun confirm</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mengniu-join/index.html">mengniu join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mengniu/index.html">mengniu</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mlops-commitee/index.html">mlops commitee</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../shenxin-join/index.html">shenxin join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../sql-boy/index.html">sql boy</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../talk-about-transition/index.html">talk about transition</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../transition-review/index.html">transition review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../zte-join/index.html">zte join</a></li>
+<ul>
+
+</ul>
+</ul>
+      </nav>
+      <article id="main" class="content">
+        <h1 id="devops-%2B-mlops-meetup-%E5%9B%9E%E9%A1%BE">DevOps + MLOps Meetup 回顾 <a class="heading-anchor-permalink" href="#devops-%2B-mlops-meetup-%E5%9B%9E%E9%A1%BE">#</a></h1>
+<h2 id="devops-%26-mlops-%E5%A6%82%E4%BD%95%E5%9C%A8%E4%BC%81%E4%B8%9A%E4%B8%AD%E8%A7%A3%E5%86%B3%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9B%B0%E5%A2%83%EF%BC%9F">DevOps &amp; MLOps 如何在企业中解决机器学习困境？ <a class="heading-anchor-permalink" href="#devops-%26-mlops-%E5%A6%82%E4%BD%95%E5%9C%A8%E4%BC%81%E4%B8%9A%E4%B8%AD%E8%A7%A3%E5%86%B3%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9B%B0%E5%A2%83%EF%BC%9F">#</a></h2>
+<p>2022-06-12 17:21:10 星策社区</p>
+<p>6月5日，由星策社区主办的「DevOps+MLOps Meetup」于线上召开，活动由<strong>51CTO视频号、CSDN直播间、开源中国视频号、极狐GitLab视频号四平台同步支持，累计观看人次超过5000</strong>。</p>
+<p>星策社区发起人——谭中意，在本次活动中重点介绍了DevOps与MLOps的概念与异同之处；</p>
+<p>极狐GitLab架构师——刘巍锋，分享了如何使用传统的代码管理工具和流水线平台 Gitlab，实现机器学习模型的开发自动化；</p>
+<p>第四范式OpenMLDB研发负责人——卢冕，介绍了如何使用OpenMLDB解决特征线上线下一致性问题，加速机器学习的开发和上线过程。</p>
+<p>🌟本文根据三位老师分享的重点内容整理而成，PPT获取请**关注公众号「星策开源」并回复「0605」**🌟</p>
+<h2 id="%E7%B2%BE%E5%BD%A9%E5%86%85%E5%AE%B9%E5%9B%9E%E9%A1%BE">精彩内容回顾 <a class="heading-anchor-permalink" href="#%E7%B2%BE%E5%BD%A9%E5%86%85%E5%AE%B9%E5%9B%9E%E9%A1%BE">#</a></h2>
+<h3 id="part1%EF%BC%9Adevops%2Bmlops%EF%BC%8C%E9%83%BD%E6%98%AF%E4%B8%BA%E4%BA%86%E6%95%88%E7%8E%87%E2%80%94%E8%B0%AD%E4%B8%AD%E6%84%8F">Part1：DevOps+MLOps，都是为了效率—谭中意 <a class="heading-anchor-permalink" href="#part1%EF%BC%9Adevops%2Bmlops%EF%BC%8C%E9%83%BD%E6%98%AF%E4%B8%BA%E4%BA%86%E6%95%88%E7%8E%87%E2%80%94%E8%B0%AD%E4%B8%AD%E6%84%8F">#</a></h3>
+<p>星策社区发起人，开源软件推进联盟副秘书长，开放原子基金会TOC副主席—谭中意，在此次meetup中重点介绍了DevOps、MLOps的由来、概念和两者的异同之处。</p>
+<p><img src="./img/v1.png" alt="v1"></p>
+<h4 id="%E4%BB%80%E4%B9%88%E6%98%AF-devops">什么是 DevOps <a class="heading-anchor-permalink" href="#%E4%BB%80%E4%B9%88%E6%98%AF-devops">#</a></h4>
+<p>DevOps这个词从提出来流行在国内已有将近有十来年的历史，他的目标是在保证质量的基础上更快的Deliver软件。在传统的工作模式下面，Dev（开发者）负责将编译好的代码交给Ops（运维团队）部署到线上，前者关心的是更快的上线，实现功能，后者关心的是系统的稳定性与可用性，因为目标的不一致，造成在传统研发模式下，Dev与Ops的矛盾越来越大，形成了一道阻碍沟通的“部门墙”。</p>
+<p>为了解决这一问题，打破这道墙，出现了一种新的研发模式即DevOps。通过CI+CD让研发与运维联合起来，形成一个DevOps双环，以此打破团队界限，用一种更高效、更流水性的自动化方式来工作。这种方式后来被广泛应用，如今已有十多年之久，同时也出现了各种形式的Ops和以及工具，目标是为了提升机器学习落地的效率。</p>
+<p><img src="./img/v2.png" alt="v2"></p>
+<h4 id="%E4%BB%80%E4%B9%88%E6%98%AF-mlops%EF%BC%9F">什么是 MLOPs？ <a class="heading-anchor-permalink" href="#%E4%BB%80%E4%B9%88%E6%98%AF-mlops%EF%BC%9F">#</a></h4>
+<p>MLOps是面向机器学习领域，为了提高机器学习落地效率的。其中涉及角色包括数据科学家和软件工程师。他的任务包括定义场景、数据收集和整理、模型训练和部署、持续监控和更新，这是一个完整的pipeline的四个部分，在这一套生命周期里面每一个环节他都需要更快的迭代和更快的反馈。同时它的范围不仅仅只是代码，还包括模型和数据。所以简单来说MLOps就是包含了代码、模型和数据的持续集成、持续部署、持续训练和持续监控，同时还包括了各种平台工具，比如FeatureStore、ModelStore、ModelMonitoring等。</p>
+<p><img src="./img/v3.png" alt="v3"></p>
+<h4 id="devops-vs-mlops">DevOps Vs MLOps <a class="heading-anchor-permalink" href="#devops-vs-mlops">#</a></h4>
+<p>不同点：对于DevOps和MLOps来说，他们面向的对象、过程和触发方式是不一样的。DevOps的触发方式主要是代码的修改，而MLOps不仅仅是代码修改，当数据发生修改、Model Decay模型性能发生衰退都会触发流水线。</p>
+<p>相同点：DevOps与MLOps的出现，都是为了提升效率。其实不管是什么OPS，它的目标都是为最终的用户创造价值。DevOps与MLOps的基本理念也是相同的，包括都是尽可能的自动化；对于提升实践的关键特点、关键做法也是相同的，其中系统的思考，尽快的反馈，持续的学习和改进，被称之为DevOps的3个方法论，在MLOps里面同样适用。</p>
+<p><img src="./img/v4.png" alt="v4"></p>
+<h3 id="part2%EF%BC%9Amlops%E5%9C%A8%E6%9E%81%E7%8B%90-gitlab-%E7%9A%84%E5%BA%94%E7%94%A8%E6%8E%A2%E7%B4%A2%E2%80%94%E2%80%94%E5%88%98%E5%B7%8D%E9%94%8B">Part2：MLOps在极狐 GitLab 的应用探索——刘巍锋 <a class="heading-anchor-permalink" href="#part2%EF%BC%9Amlops%E5%9C%A8%E6%9E%81%E7%8B%90-gitlab-%E7%9A%84%E5%BA%94%E7%94%A8%E6%8E%A2%E7%B4%A2%E2%80%94%E2%80%94%E5%88%98%E5%B7%8D%E9%94%8B">#</a></h3>
+<p>极狐GitLab架构师——刘巍锋在此次meetup中重点介绍了极狐GitLab中的MLOps，以及使用GitLab实现MLOps所面临的挑战和展望。</p>
+<p><img src="./img/v5.png" alt="v5"></p>
+<h4 id="mlops%E6%98%AF%E4%BB%80%E4%B9%88">MLOps是什么 <a class="heading-anchor-permalink" href="#mlops%E6%98%AF%E4%BB%80%E4%B9%88">#</a></h4>
+<p>MLOps 就是机器学习时代的 DevOps。它的主要作用是连接模型构建团队和业务，运维团队，建立起一个标准化的模型开发，部署与运维流程，使得企业组织能更好的利用机器学习的能力来促进业务增长。</p>
+<h4 id="%E6%9E%81%E7%8B%90gitlab%E4%B8%AD%E7%9A%84mlops">极狐GitLab中的MLOps <a class="heading-anchor-permalink" href="#%E6%9E%81%E7%8B%90gitlab%E4%B8%AD%E7%9A%84mlops">#</a></h4>
+<p>众所周知，极狐GitLab是MLOps领域里一个非常成熟的产品，它的强项领域就是在DevOps。而DevOps和MLOps的高度相似让极狐GitLab产生了思考，能不能借助DevOPS平台来解决一些MLOpd的事情呢？基于此，为GitLab进行重新定位，让极狐GitLab 成为机器学习工程师和数据科学家的完美伙伴和工具，并在整个机器学习生命周期（模型创建、测试、部署、监控和迭代）中为他们提供更好的用户体验。</p>
+<p>如下图所示，橙色部分属于GItlab，白色部分属于由第三方平台或者工具来提供的。其中代码、超参数、部署等过程可以使用GitLab来完成。整个过程可以理解为一个机器学习pipeline，这个pipeline是通过使用GItlab自带的CI pipeline所实现的。</p>
+<p><img src="./img/v6.png" alt="v6"></p>
+<h4 id="%E5%BD%93%E5%89%8D%E7%8E%B0%E7%8A%B6">当前现状 <a class="heading-anchor-permalink" href="#%E5%BD%93%E5%89%8D%E7%8E%B0%E7%8A%B6">#</a></h4>
+<p>GItLab当前针对MLOps所做改进有以下几点：</p>
+<ul>
+<li>部署脚本保存在单独project中</li>
+<li>JH GitLab的agent server监控内容是否有更新</li>
+<li>Agent server通知k8s中的agentk配置更改</li>
+<li>agentk根据情况更新部署环境</li>
+</ul>
+<h4 id="%E6%9E%81%E7%8B%90gitlab%E7%9A%84%E6%8E%A2%E7%B4%A2">极狐GitLab的探索 <a class="heading-anchor-permalink" href="#%E6%9E%81%E7%8B%90gitlab%E7%9A%84%E6%8E%A2%E7%B4%A2">#</a></h4>
+<p>下图所示为当前实现的流程图，中间的每一步都可以看作GitLab Pipeline中的Job，每一个工作都在GitLab的MLRunner中，可以认为它是一个执行器。整体上看，通过DVC把S3中的指定的训练数据集拉下来，进行模型训练，之后进行模型评估，结果算出后写到MR中去，基于这些信息产生一个评估结果，数据科学家根据评估结果进行再次评估、更改。如果不符合需求，可以选择将MR丢掉不处理，或者回到训练数据/代码/配置重新更改，再次触发整个流程。如果符合需求，这个MR的代码才会合并到主分支中去，同时把生成镜像以及模型保存下来。</p>
+<p>最右边CD过程，是通过JH GitLab KAS的GitOps工作流模式实现，包含以下几个特点：</p>
+<ul>
+<li>完美支持ipynb格式文件（{<code>&gt;</code>}v14.5）</li>
+<li>整合MLFlow （进行中）</li>
+<li>JupyterLab插件  （进行中）</li>
+<li>与客户在大数据/机器学习领域展开探索实践</li>
+</ul>
+<p><img src="./img/v7.png" alt="v7"></p>
+<h4 id="%E9%9D%A2%E4%B8%B4%E7%9A%84%E6%8C%91%E6%88%98%E5%92%8C%E5%B1%95%E6%9C%9B">面临的挑战和展望 <a class="heading-anchor-permalink" href="#%E9%9D%A2%E4%B8%B4%E7%9A%84%E6%8C%91%E6%88%98%E5%92%8C%E5%B1%95%E6%9C%9B">#</a></h4>
+<p>对于当前使用GitLab实现MLOps 面临着以下挑战：1:用户需要熟悉GitLab CI，GitOps等工具和流程才可以实现。2:极狐GitLab暂时没有MLOps模版可用。3:缺少与其他主流ML框架/工具整合方案。4:海量数据的传输保存面临挑战。未来Gitlab将针对以上问题进行不断探索与改进。</p>
+<h3 id="part3%EF%BC%9Aopenmldb%EF%BC%9A%E5%BC%80%E6%BA%90%E5%AE%9E%E6%96%BD%E7%89%B9%E5%BE%81%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94%E5%8D%A2%E5%86%95">Part3：OpenMLDB：开源实施特征计算平台——卢冕 <a class="heading-anchor-permalink" href="#part3%EF%BC%9Aopenmldb%EF%BC%9A%E5%BC%80%E6%BA%90%E5%AE%9E%E6%96%BD%E7%89%B9%E5%BE%81%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94%E5%8D%A2%E5%86%95">#</a></h3>
+<p>第四范式系统架构师、OpenMLDB研发负责人——卢冕，在此次meetup中重点介绍了OpenMLDB解决机器学习全流程（MLOps）特征问题。</p>
+<p><img src="./img/v8.png" alt="v8"></p>
+<p>如下图所示，MLOps 可以看作机器学习应用开发到上线的全流程，它包含离线开发和线上服务两部分，这两套流程中同时包含从数据到特征计算到模型训练的全过程。和大部分DevOps落地过程中遇到的问题类似，MLOps也遇到了很多难点，重点包含两个方面，首先是线上线下一致性校验问题，其次是实时特征拼接和聚合问题。</p>
+<p>OpenMLDB 可以恰当的解决 MLOps 过程中关于特征数据 FeatureOps 的问题，应用于决策类场景基于时序数据的特征工程，可以极大的提升机器学习上线的效率，满足生产级上线需求的实时推荐系统，降低机器学习从业人员的门槛。</p>
+<p><img src="./img/v9.png" alt="v9"></p>
+<p>从架构来看，OpenMLDB对外提供了唯一的开发语言SQL，数据科学家只要会写SQL就能用SQL开发特征计算脚本。从内部看，OpenMLDB有两套引擎，一套是批处理的SQL引擎，另一套是实时的SQL引擎。批处理的SQL引擎主要针对线下开发过程，基于Spark做了一些源代码级别的优化，可以更好的处理特征平台特征计算。而实时SQL部分，OpenMLDB团队从零构建了一个分布式的时序内存数据库，完全针对于时序数据优化的一个SQL引擎。架构图中间是一致性执行计划生成器，它承接输入方的SQL，在内部自动转换成线下的执行计划和线上的执行计划，从内部自动保障了线上、线下计算逻辑的一致，省去人为的线上线下一致性的校验过程，做到开发即上线。简单总结来看只需要三个步骤就可以完成这个过程，即</p>
+<p>1.线下SQL特征脚本开发。
+2.一键部署上线 3.接入实时请求数据流。</p>
+<p><img src="./img/v10.png" alt="v10"></p>
+<p>目前OpenMLDB 新版本v0.5.0 带来了性能、成本、灵活性的重大优化升级。主要升级体现在：1.通过预聚合技术，显著提升可长窗口性能。2.成本降低。提供了基于内存和外存的两种存储引擎选择，大大降低了成本。3.易用性增强。支持C/C++ UDF，并支持UDF动态注册，方便使用者扩展计算逻辑，提升了应用覆盖范围。总结来看，新版本的 OpenMLDB 在线性能数量级有了大幅提升，提供了低成本落地选择，使用场景的灵活性也得到扩展。未来0.6.0版本将更加关注易用性和可运维性，包括数据库状态自检和报告工具、查询调试和 tracing 工具、数据库性能分析和统计报告生成工具、Flink connector、整合特征编码等相关算法等。</p>
+<h3 id="%E6%80%BB%E7%BB%93">总结 <a class="heading-anchor-permalink" href="#%E6%80%BB%E7%BB%93">#</a></h3>
+<p>DevOps与MLOps的出现都是为了提高企业的效率，提升研发领域的效率，为了更好的给客户提供价值。而 MLOps 作为基于 DevOps 发展而涌现出的后起之秀，可以在领域即数据分析和机器学习领域，起到非常大的作用。相信随着企业数字化转型纷纷进入到高级阶段即智能化阶段，AI 在企业大批的落地并发挥关键作用，MLOps 也会成为热词，并在未来的 10 年内，成为业内 AI 落地的必不可少的默认词。</p>
+<p>最后，欢迎大家持续关注 DevOps 与 MLOps，加入交流群和我们一起讨论 MLOps 相关内容。</p>
+
+      </article>
+    </div>
+    <script>
+      // Load contents.json if you need it
+    </script>
+    <script>
+      // FROM http://purecss.io/js/ui.js
+      (function(window, document) {
+        var layout = document.getElementById("layout"),
+          menu = document.getElementById("menu"),
+          menuLink = document.getElementById("menuLink");
+
+        function toggleClass(element, className) {
+          var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+          for (; i < length; i++) {
+            if (classes[i] === className) {
+              classes.splice(i, 1);
+              break;
+            }
+          }
+          // The className is not found
+          if (length === classes.length) {
+            classes.push(className);
+          }
+
+          element.className = classes.join(" ");
+        }
+
+        menuLink.onclick = function(e) {
+          var active = "active";
+
+          e.preventDefault();
+          toggleClass(layout, active);
+          toggleClass(menu, active);
+          toggleClass(menuLink, active);
+        };
+      })(this, this.document);
+    </script>
+  </body>
+</html>

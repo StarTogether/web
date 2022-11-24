@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-rendering: optimizeLegibility;
+        line-height: 1;
+        margin-top: 0;
+        color: #222;
+      }
+
+      blockquote + figcaption cite {
+        display: block;
+        font-size: inherit;
+        text-align: right;
+      }
+
+      body {
+        word-wrap: break-word;
+      }
+
+      pre code {
+        word-wrap: normal;
+      }
+
+      body {
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        color: #444;
+      }
+
+      h1 {
+        font-size: 2em;
+        /* 2*16 = 32 */
+      }
+
+      h2 {
+        font-size: 1.5em;
+        /* 1.5*16 = 24 */
+      }
+
+      h3 {
+        font-size: 1.17em;
+        /* 1.17*16 = 18.72 */
+      }
+
+      h4 {
+        font-size: 1em;
+        /* 1*16 = 16 */
+      }
+
+      h5 {
+        font-size: 0.83em;
+        /* 0.83*16 = 13.28 */
+      }
+
+      h6 {
+        font-size: 0.75em;
+        /* 0.75*16 = 12 */
+      }
+
+      h1 {
+        margin: 2.42424rem 0 1.454544rem;
+      }
+
+      h2 {
+        margin: 2.0202rem 0 1.21212rem;
+      }
+
+      h3 {
+        margin: 1.61616rem 0 1rem;
+      }
+
+      h4 {
+        margin: 1.21212rem 0 1;
+      }
+
+      h5 {
+        margin: 0.80808rem 0;
+      }
+
+      h6 {
+        margin: 0.70707rem 0;
+      }
+
+      p {
+        margin: auto auto 1.5rem;
+      }
+
+      small {
+        font-size: 65%;
+      }
+
+      input,
+      abbr,
+      acronym,
+      blockquote,
+      code,
+      kbd,
+      q,
+      samp,
+      var {
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre {
+        white-space: pre;
+      }
+
+      pre code {
+        white-space: -moz-pre-wrap;
+        white-space: pre-wrap;
+      }
+
+      code {
+        white-space: pre;
+        font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+      }
+
+      abbr {
+        -webkit-font-variant: small-caps;
+        -moz-font-variant: small-caps;
+        -ms-font-variant: small-caps;
+        font-variant: small-caps;
+        font-weight: 600;
+        text-transform: lowercase;
+        color: gray;
+      }
+
+      abbr[title]:hover {
+        cursor: help;
+      }
+
+      /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        color: #444;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: auto;
+      }
+
+      code,
+      pre {
+        background-color: #f5f5f5;
+        color: #444;
+        border-radius: 2px;
+        text-shadow: 0px 1px 0px white;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      }
+
+      pre code {
+        border: none;
+        box-shadow: none;
+      }
+
+      pre {
+        padding: 0.5em;
+      }
+
+      code {
+        display: inline-block;
+        padding: 0 0.5em;
+        line-height: 1.4;
+        font-size: 0.9em;
+      }
+
+      table {
+        border-spacing: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      table th,
+      table td {
+        padding: 0.3em 0.7em;
+      }
+
+      table th {
+        background-color: #f4f4f4;
+        border-bottom: 2px solid #444;
+      }
+
+      table td {
+        border: 1px solid #f5f5f5;
+      }
+
+      /* Add transition to containers so they can push in and out. */
+
+      #layout,
+      #menu,
+      .menu-link {
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -ms-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+      }
+
+      /* This is the parent `<div>` that contains the menu and the content area. */
+
+      #layout {
+        position: relative;
+        padding-left: 0;
+      }
+
+      #layout.active #menu {
+        left: 250px;
+        width: 250px;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+
+      /* The content `<div>` is where all your content goes. */
+
+      .content {
+        margin: 50px auto;
+        padding: 0 2em;
+        max-width: 80ex;
+        line-height: 1.6em;
+      }
+
+      /*
+      The `#menu` `<div>` is the parent `<div>` that contains the menu that
+      appears on the left side of the page.
+      */
+
+      #menu {
+        margin-left: -250px;
+        /* "#menu" width */
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        /* so the menu or its navicon stays above all content */
+        background: #f4f4f4;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.9em;
+      }
+
+      @media print {
+        #menu,
+        .menu-link {
+          display: none !important;
+        }
+      }
+
+      a,
+      a * {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      a:visited {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      /* All anchors inside the menu should be styled like this. */
+
+      #menu a {
+        display: block;
+        padding: 0.5em 0.5em;
+      }
+
+      #menu a:first-letter {
+        text-transform: capitalize;
+      }
+
+      #menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 1em 0.5em;
+      }
+
+      #menu ul ul {
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        border-left: 4px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Change color of the anchor links on hover/focus. */
+
+      #menu li a:hover,
+      #menu li a:focus {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      /* This styles the selected menu item `<li>`. */
+
+      #menu li a.active {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      /* This styles a link within a selected menu item `<li>`. */
+
+      #menu li a.active {
+        color: #222;
+      }
+
+      /* This styles the menu heading. */
+
+      #menu li.heading {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      #menu li.heading > * {
+        padding: 0.5em;
+        display: block;
+      }
+
+      #menu li.heading a {
+        color: #0c68af;
+      }
+
+      /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+      /*
+      `.menu-link` represents the responsive menu toggle that shows/hides on
+      small screens.
+      */
+
+      .menu-link {
+        position: fixed;
+        display: block;
+        /* show this only on small screens */
+        top: 0;
+        left: 0;
+        /* "#menu width" */
+        font-size: 10px;
+        /* change this value to increase/decrease button size */
+        z-index: 10;
+        width: 2em;
+        height: auto;
+        padding: 1.6em 1.2em;
+        border-radius: 0 2px 2px 0;
+      }
+
+      .menu-link:hover {
+        background: #f4f4f4;
+      }
+
+      .menu-link span {
+        position: relative;
+        display: block;
+      }
+
+      .menu-link span,
+      .menu-link span:before,
+      .menu-link span:after {
+        background-color: #555;
+        width: 100%;
+        height: 0.2em;
+        border-radius: 1em;
+      }
+
+      .menu-link span:before,
+      .menu-link span:after {
+        position: absolute;
+        margin-top: -0.6em;
+        content: " ";
+      }
+
+      .menu-link span:after {
+        margin-top: 0.6em;
+      }
+
+      /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+      @media (min-width: 48em) {
+        .header,
+        .content {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+
+        #layout {
+          padding-left: 250px;
+          /* left col width "#menu" */
+          left: 0;
+        }
+        #menu {
+          left: 250px;
+        }
+
+        .menu-link {
+          position: fixed;
+          left: 250px;
+          display: none;
+        }
+
+        #layout.active .menu-link {
+          left: 250px;
+        }
+      }
+
+      @media (max-width: 48em) {
+        /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+         * Make the window small.
+         * Tap the menu to trigger the active state.
+         * Make the window large again.
+         */
+        #layout.active {
+          position: relative;
+          left: 250px;
+        }
+      }
+
+      /* Heading anchors and permalinks */
+      h1[id],
+      h2[id],
+      h3[id],
+      h4[id],
+      h5[id],
+      h6[id] {
+        position: relative;
+      }
+      .heading-anchor-permalink {
+        /* Position the permalink to the left of the title */
+        position: absolute;
+        right: 100%;
+        /* Add some spacing as padding to not lose the hover */
+        padding-right: 0.6rem;
+        /* Make it only visible on heading hover, see below */
+        opacity: 0;
+      }
+      h1[id]:hover .heading-anchor-permalink,
+      h2[id]:hover .heading-anchor-permalink,
+      h3[id]:hover .heading-anchor-permalink,
+      h4[id]:hover .heading-anchor-permalink,
+      h5[id]:hover .heading-anchor-permalink,
+      h6[id]:hover .heading-anchor-permalink {
+        opacity: 0.5;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div id="layout">
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+      <nav id="menu">
+        <ul>
+<li class="heading"><a class="" href="../ai-summit/index.html">ai summit</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../csdn-join/index.html">csdn join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../dataops-review/index.html">dataops review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../developer/index.html">developer</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../devops-review/index.html">devops review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../devops_mlops/index.html">devops mlops</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../dian-join/index.html">dian join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="active" href="index.html">features store v3</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../fs-v4-review/index.html">fs v4 review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../lushouqun-confirm/index.html">lushouqun confirm</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mengniu-join/index.html">mengniu join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mengniu/index.html">mengniu</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mlops-commitee/index.html">mlops commitee</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../shenxin-join/index.html">shenxin join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../sql-boy/index.html">sql boy</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../talk-about-transition/index.html">talk about transition</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../transition-review/index.html">transition review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../zte-join/index.html">zte join</a></li>
+<ul>
+
+</ul>
+</ul>
+      </nav>
+      <article id="main" class="content">
+        <h1 id="feature-store-meetup-v3-%E5%9B%9E%E9%A1%BE">Feature Store Meetup V3 回顾 <a class="heading-anchor-permalink" href="#feature-store-meetup-v3-%E5%9B%9E%E9%A1%BE">#</a></h1>
+<h2 id="%E5%8D%8E%E4%B8%BA%E5%95%86%E5%9F%8E-%26-%E7%AC%AC%E5%9B%9B%E8%8C%83%E5%BC%8F-%26-%E4%BC%97%E5%AE%89%E4%BF%9D%E9%99%A9%E7%89%B9%E5%BE%81%E5%B9%B3%E5%8F%B0%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">华为商城 &amp; 第四范式 &amp; 众安保险特征平台建设实践 <a class="heading-anchor-permalink" href="#%E5%8D%8E%E4%B8%BA%E5%95%86%E5%9F%8E-%26-%E7%AC%AC%E5%9B%9B%E8%8C%83%E5%BC%8F-%26-%E4%BC%97%E5%AE%89%E4%BF%9D%E9%99%A9%E7%89%B9%E5%BE%81%E5%B9%B3%E5%8F%B0%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5">#</a></h2>
+<p>2022-06-23 10:55:00 星策社区</p>
+<p>6月12日，星策社区主办的第三期「Feature Store Meetup」于线上开展，<strong>本次活动由思否视频号、CSDN直播间、示说网同步支持，累计观看人次超过4500+。</strong></p>
+<p>活动围绕“Feature Store特征平台的建设实践”，特邀星策社区发起人<strong>谭中意</strong>，分享“ Feature Store的概念与发展概况”；</p>
+<p>华为商城算法工程师<strong>曾中铭</strong>，分享“华为商城特征平台建设实践”；</p>
+<p>第四范式 OpenMLDB PMC <strong>陈迪豪</strong>，分享“ OpenMLDB 解决生产环境上线面临的数据特征挑战”；</p>
+<p>安保险金融数据应用团队负责人<strong>郭育波</strong>，分享“众安保险金融特征中台建设”；</p>
+<p>几位嘉宾分别从技术角度对 Feature Store 的应用实践进行全方位解读。</p>
+<p>🌟本文根据四位老师分享的重点内容整理而成，<strong>PPT获取请关注公众号「星策开源」并回复「0612」～</strong>🌟</p>
+<h2 id="%E7%B2%BE%E5%BD%A9%E5%86%85%E5%AE%B9%E5%9B%9E%E9%A1%BE">精彩内容回顾 <a class="heading-anchor-permalink" href="#%E7%B2%BE%E5%BD%A9%E5%86%85%E5%AE%B9%E5%9B%9E%E9%A1%BE">#</a></h2>
+<h3 id="part1%EF%BC%9Afeature-store%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%BA%94%E7%94%A8%E8%83%8C%E6%99%AF%E2%80%94%E8%B0%AD%E4%B8%AD%E6%84%8F">Part1：Feature Store概念与应用背景—谭中意 <a class="heading-anchor-permalink" href="#part1%EF%BC%9Afeature-store%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%BA%94%E7%94%A8%E8%83%8C%E6%99%AF%E2%80%94%E8%B0%AD%E4%B8%AD%E6%84%8F">#</a></h3>
+<p>星策社区发起人，开源软件推进联盟副秘书长，开放原子基金会TOC副主席—谭中意，在此次 meetup 中重点介绍了 Feature Store 的概念、与发展情况。</p>
+<p><img src="./img/v1.png" alt="img"></p>
+<h4 id="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%B0%E6%8D%AE%E9%9A%BE%E9%A2%98">机器学习数据难题 <a class="heading-anchor-permalink" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%B0%E6%8D%AE%E9%9A%BE%E9%A2%98">#</a></h4>
+<p>AI System=Code+Data+Model，其中数据问题尤为棘手。数据带来的挑战主要包括五个方面1. Scale-海量的data for training；2. Low Latency-高QPS低延迟的serving；3. Data change cause model decay- world change；4. Time Travel-时序特征数据处理容易出问题；5. Training/Serving skew- 训练和预测使用的数据不一致，当然还有更多。为了解决这些数据问题，在借鉴 DevOps 领域的成功经验后出现了 MLOps 。</p>
+<p><img src="./img/v2.png" alt="img"></p>
+<h4 id="mlops%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F">MLOps是什么？ <a class="heading-anchor-permalink" href="#mlops%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F">#</a></h4>
+<p>MLOps 是面向机器学习领域，为了提高机器学习落地效率而出现的概念。其中涉及角色包括数据科学家和软件工程师。任务包括定义场景、数据收集和整理、模型训练和部署、持续监控和更新，包括 Pipeline 的四个部分，在整个生命周期中的每一环节都需要更快的迭代和更快的反馈。</p>
+<h4 id="mlops-%E4%B8%8D%E5%8F%AA%E6%98%AF%E6%B5%81%E7%A8%8B%E5%92%8C-pipeline-%EF%BC%8C%E8%BF%98%E5%8C%85%E6%8B%AC%E4%BB%A5%E4%B8%8B%E7%9A%84%E5%B7%A5%E5%85%B7%E5%B9%B3%E5%8F%B0%EF%BC%9A">MLOps 不只是流程和 Pipeline ，还包括以下的工具平台： <a class="heading-anchor-permalink" href="#mlops-%E4%B8%8D%E5%8F%AA%E6%98%AF%E6%B5%81%E7%A8%8B%E5%92%8C-pipeline-%EF%BC%8C%E8%BF%98%E5%8C%85%E6%8B%AC%E4%BB%A5%E4%B8%8B%E7%9A%84%E5%B7%A5%E5%85%B7%E5%B9%B3%E5%8F%B0%EF%BC%9A">#</a></h4>
+<ul>
+<li>存储平台：特征和模型的存储和读取</li>
+<li>计算平台：流式， 批处理特征和模型</li>
+<li>消息队列：用于接收实时数据</li>
+<li>调度工具：计算/存储资源的调度</li>
+<li>Feature Store：注册/发现/共享特征</li>
+<li>Model Store：模型的注册/存储/版本等</li>
+<li>Evaluation Store：模型监控/AB测试等</li>
+</ul>
+<p><img src="./img/v3.png" alt="img"></p>
+<h4 id="feature-store%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F">Feature Store是什么？ <a class="heading-anchor-permalink" href="#feature-store%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F">#</a></h4>
+<blockquote>
+<p>A feature Store that allows teams to share，discover and use a highly curated set of features for their machine learning problems.–from Uber’s Blog</p>
+</blockquote>
+<p>Feature Store 是构建、管理、共享机器学习所需要的特征的中间仓库。自2017年 Uber 首次提出后，发展至今已有多个创业公司获得投资。2020年至今，国内已有多个大厂发布了相应的商业产品和开源项目。</p>
+<h3 id="part2%EF%BC%9A%E5%8D%8E%E4%B8%BA%E5%95%86%E5%9F%8E%E7%89%B9%E5%BE%81%E5%B9%B3%E5%8F%B0%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94%E6%9B%BE%E4%B8%AD%E9%93%AD">Part2：华为商城特征平台建设实践——曾中铭 <a class="heading-anchor-permalink" href="#part2%EF%BC%9A%E5%8D%8E%E4%B8%BA%E5%95%86%E5%9F%8E%E7%89%B9%E5%BE%81%E5%B9%B3%E5%8F%B0%E5%BB%BA%E8%AE%BE%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94%E6%9B%BE%E4%B8%AD%E9%93%AD">#</a></h3>
+<p>华为商城算法工程师曾中铭，在本次活动中主要介绍了华为商城业务背景、问题、挑战；特征平台建设目标、亮点，业界前沿观察。</p>
+<p><img src="./img/v4.png" alt="img"></p>
+<h4 id="ai%E6%95%B0%E6%8D%AE%E6%8C%91%E6%88%98%E4%B8%8E%E7%89%B9%E5%BE%81%E5%B9%B3%E5%8F%B0%E5%BB%BA%E8%AE%BE%E8%83%8C%E6%99%AF">AI数据挑战与特征平台建设背景 <a class="heading-anchor-permalink" href="#ai%E6%95%B0%E6%8D%AE%E6%8C%91%E6%88%98%E4%B8%8E%E7%89%B9%E5%BE%81%E5%B9%B3%E5%8F%B0%E5%BB%BA%E8%AE%BE%E8%83%8C%E6%99%AF">#</a></h4>
+<p>AI开发中存在诸多技术挑战，涉及技术栈多，流程长。以推荐系统为例，整个推荐系统包含了数据，模型，工程三大部分，其中涉及的技术栈非常全面，流程非常复杂。其中任意一个地方出问题，轻则导致模型效果下降，用户体验受损，重则导致服务不可用，引发生产事故。</p>
+<p>而以数据为中心的难题，是业界探索和解决机器学习落地的重点。这些难点可以分成五个大类：特征计算难、特征 Serving 难、样本生成难、特征样本监控难、特征、样本管理缺失。为了解决这五个难点，华为商城有了自己的特征平台设计目标。</p>
+<p><img src="./img/v5.png" alt="img"></p>
+<h4 id="%E7%89%B9%E5%BE%81%E5%B9%B3%E5%8F%B0%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87">特征平台设计目标 <a class="heading-anchor-permalink" href="#%E7%89%B9%E5%BE%81%E5%B9%B3%E5%8F%B0%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87">#</a></h4>
+<p>上图所示，整个特征平台规划可以为两个阶段，MVP 阶段和进阶阶段，前者着重解决从无到有的能力问题；后者在此基础上，提供更好的扩展性。举例来说，以特征计算为例，它的创建与管理对算法工程师来说，并不在算法方式本身的技术栈范围内，所以特征平台的目标就是降低整个特征 Pipeline 的创建难度，帮助算法工程师能快速的实现他们的数据验证。而在 MVP进阶阶段，则是针对比较复杂的特征计算，如何在保证平台利用性的基础上，把复杂流程通过扩展的方式加到平台上，融入 DevOps 流程。同理，针对样本生成、特征 Serving、特征样本监控以及特征管理，都分别有相应的 MVP 与进阶形态的设计目标。</p>
+<p><img src="./img/v6.png" alt="img"></p>
+<h3 id="%E5%8D%8E%E4%B8%BA%E5%95%86%E5%9F%8E%E7%89%B9%E5%BE%81%E5%B9%B3%E5%8F%B0%E9%80%BB%E8%BE%91%E6%9E%B6%E6%9E%84">华为商城特征平台逻辑架构 <a class="heading-anchor-permalink" href="#%E5%8D%8E%E4%B8%BA%E5%95%86%E5%9F%8E%E7%89%B9%E5%BE%81%E5%B9%B3%E5%8F%B0%E9%80%BB%E8%BE%91%E6%9E%B6%E6%9E%84">#</a></h3>
+<p>上图是华为商城特征平台的逻辑架构，横向来看，左边是特征计算（Feature Computing），对接现有的数据中台各个存储组件以及数据服务，负责把数据从存储组件中拉取到平台上，完成特定的计算和存储。右边是特征服务（Feature Serving），对外提供消费的统一入口，当右边模型的训练，需要消费样本，这些样本会通过 Feature Serving 的模块进行查询在线服务。推理时所需要实时、高并发、低时延的查询特征，也会通过 Feature Serving 的入口进行调用。</p>
+<p>垂直来看，首先是 Monitoring 全局的监控模块，主要负责数据 Pipeline ，特征服务本身的监控。在进阶的状态下，还会负责整个平台上所有数据的质量监控。下方 Feature Registry 是整个特征的元数据管理中心，所有平台上的特征、样本、数据资产，会在这里进行管理，然后通过 Web UI 的方式，可视化的提供给用户进行探索，方便共享和复用。</p>
+<p>整个特征平台的四大模块，本身并不直接承载的数据计算或数据存储的工作，而是创建对应的作业，把作业交给特定的计算引擎使用。在存储方面，也只管理数据的元数据，真正数据本身的存储则交给其他云服务去做。</p>
+<p><img src="./img/v7.png" alt="img"></p>
+<h4 id="%E7%89%B9%E5%BE%81%E7%94%9F%E4%BA%A7%E7%9A%84%E7%AE%80%E5%8C%96">特征生产的简化 <a class="heading-anchor-permalink" href="#%E7%89%B9%E5%BE%81%E7%94%9F%E4%BA%A7%E7%9A%84%E7%AE%80%E5%8C%96">#</a></h4>
+<p>特征生产的本质是建立了一个包含AI领域知识的数据 Pipeline。如上图左边所示，整个 Pipeline 非常复杂，特征生产无法通过单个角色承担: 算法工程师无法独立完成数据 Pipeline 作业创建、管理、维护；数据工程师:对AI领域知识和业务信息了解有限，跨团队效率下降。所以在特征生产简化方面的核心是如何要让算法工程师可以自助的来完成这些特征生产的工作。</p>
+<p>右侧是加入了特征平台之后的情况。算法工程师只需要以 SQL 或者 PySpark 的形式提供核心的特征计算逻辑。平台会负责具体的特征判作业的创建、部署和管理。同时平台还承载了比较偏向工程的 IO 逻辑存储优化等等难点的解决。</p>
+<p>因此，整个特征生产使得AI数据可以由算法工程师自产自销。同时将特征元数据统一纳管，实现资产共享复用 。做到特征 Pipeline 作业的统一管理，责任清晰。</p>
+<h3 id="part3%EF%BC%9Aopenmldb%E5%8A%A0%E9%80%9F%E4%BC%81%E4%B8%9A%E4%B8%8A%E7%BA%BF%E6%99%BA%E8%83%BD%E5%8C%96%E5%BA%94%E7%94%A8%E2%80%94%E2%80%94%E9%99%88%E8%BF%AA%E8%B1%AA">Part3：OpenMLDB加速企业上线智能化应用——陈迪豪 <a class="heading-anchor-permalink" href="#part3%EF%BC%9Aopenmldb%E5%8A%A0%E9%80%9F%E4%BC%81%E4%B8%9A%E4%B8%8A%E7%BA%BF%E6%99%BA%E8%83%BD%E5%8C%96%E5%BA%94%E7%94%A8%E2%80%94%E2%80%94%E9%99%88%E8%BF%AA%E8%B1%AA">#</a></h3>
+<p>第四范式平台架构师，开源项目 OpenMLDB 核心研发与 PMC 成员陈迪豪，在本次活动中重点介绍了 OpenMLDB 是如何解决人工智能工程化落地问题，保证线上线下一致性。</p>
+<p><img src="./img/v8.png" alt="img"></p>
+<h4 id="openmldb-%E6%8F%90%E4%BE%9B%E7%BA%BF%E4%B8%8A%E7%BA%BF%E4%B8%8B%E4%B8%80%E8%87%B4%E7%9A%84%E7%89%B9%E5%BE%81%E5%B9%B3%E5%8F%B0">OpenMLDB 提供线上线下一致的特征平台 <a class="heading-anchor-permalink" href="#openmldb-%E6%8F%90%E4%BE%9B%E7%BA%BF%E4%B8%8A%E7%BA%BF%E4%B8%8B%E4%B8%80%E8%87%B4%E7%9A%84%E7%89%B9%E5%BE%81%E5%B9%B3%E5%8F%B0">#</a></h4>
+<p>OpenMLDB 是一个开源机器学习数据库，提供了线上线下一致的特征平台。主要面向结构化数据和决策类场景的时序数据特征工程，处理时序数据和基于时间窗口的聚合函数，可以满足生产级上线需求的实时推荐系统。所解决的最核心的问题是线上线下一致性校验带来的高昂工程化落地成本问题，同时提供了毫秒级的实时特征计算。</p>
+<p><img src="./img/v9.png" alt="img"></p>
+<h4 id="%E7%A6%BB%E7%BA%BF%E5%BC%80%E5%8F%91%E5%88%B0%E7%BA%BF%E4%B8%8A%E6%9C%8D%E5%8A%A1%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B">离线开发到线上服务完整流程 <a class="heading-anchor-permalink" href="#%E7%A6%BB%E7%BA%BF%E5%BC%80%E5%8F%91%E5%88%B0%E7%BA%BF%E4%B8%8A%E6%9C%8D%E5%8A%A1%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B">#</a></h4>
+<p>如上图所示，在离线模式下，OpenMLDB 将离线数据导入离线数据库如 S3 或 HDFS ，然后用 OpenMLDB 离线执行引擎做离线特征计算，之后进行模型训练，得到特征结果后，将SQL做 Deploy 。在线部分将数据导入在线数据库，用 Deploy 的 SQL 做在线特征计算。最后把在线特征返回给模型，做模型的 inference 。只需在线下 做 SQL 特征脚本开发、Deploy SQL脚本以及接入实时请求数据流三步骤即可实现开发即上线的要求。目前整个 OpenMLDB 上下游支持了如下图所示的越来越多的工具。</p>
+<p><img src="./img/v10.png" alt="img"></p>
+<h4 id="openmldb-v0.5.2%EF%BC%9A%E6%80%A7%E8%83%BD%E3%80%81%E6%88%90%E6%9C%AC%E3%80%81%E6%98%93%E7%94%A8%E6%80%A7%E5%A2%9E%E5%BC%BA">OpenMLDB v0.5.2：性能、成本、易用性增强 <a class="heading-anchor-permalink" href="#openmldb-v0.5.2%EF%BC%9A%E6%80%A7%E8%83%BD%E3%80%81%E6%88%90%E6%9C%AC%E3%80%81%E6%98%93%E7%94%A8%E6%80%A7%E5%A2%9E%E5%BC%BA">#</a></h4>
+<p>目前 OpenMLDB 0.5.2 版本从性能、成本、易用性方面都有了增强。1: 性能方面实现了预聚合技术，显著提升长窗口性能。2: 成本方面，在线引擎提供了基于内存和外存的两种存储引擎选择，两种引擎上层业务代码无感知，零成本切换。3: 易用性方面，用户自定义函数（UDF）支持了 C/C++ UDF，同时支持 UDF 动态注册，方便使用者扩展计算逻辑，提升应用覆盖范围。用户可自行根据应用场景结合自身性能需求和实时计算性能需求选择使用。</p>
+<p><img src="./img/v11.png" alt="img"></p>
+<h3 id="part4%EF%BC%9A%E4%BC%97%E5%AE%89%E4%BF%9D%E9%99%A9%E9%87%91%E8%9E%8D%E7%89%B9%E5%BE%81%E4%B8%AD%E5%8F%B0%E5%BB%BA%E8%AE%BE%E2%80%94%E2%80%94%E9%83%AD%E8%82%B2%E6%B3%A2">Part4：众安保险金融特征中台建设——郭育波 <a class="heading-anchor-permalink" href="#part4%EF%BC%9A%E4%BC%97%E5%AE%89%E4%BF%9D%E9%99%A9%E9%87%91%E8%9E%8D%E7%89%B9%E5%BE%81%E4%B8%AD%E5%8F%B0%E5%BB%BA%E8%AE%BE%E2%80%94%E2%80%94%E9%83%AD%E8%82%B2%E6%B3%A2">#</a></h3>
+<p>众安保险金融数据应用团队负责人郭育波，在本次活动中重点介绍了众安保险金融特征中台的建设、金融特征工程简介、金融特征平台之架构设计、特征平台的内部服务详解和反欺诈特征应用。</p>
+<p><img src="./img/v12.png" alt="img"></p>
+<h4 id="%E4%BC%97%E5%AE%89%E4%BF%9D%E9%99%A9%E9%87%91%E8%9E%8D%E7%89%B9%E5%BE%81%E4%B8%AD%E5%8F%B0">众安保险金融特征中台 <a class="heading-anchor-permalink" href="#%E4%BC%97%E5%AE%89%E4%BF%9D%E9%99%A9%E9%87%91%E8%9E%8D%E7%89%B9%E5%BE%81%E4%B8%AD%E5%8F%B0">#</a></h4>
+<p>特征工程是将原始数据转化成更好的表达问题本质的特征的过程，使得这些特征运用到预测模型中能提高对不可见数据的模型预测精度。而我们金融的特征工程主要是为了提升对用户的风险识别能力，特征工程是数据挖掘模型开发中最耗时、最重要的一步，特征挖掘和模型的能力决定了特征工程的下限，而特征平台的能力可以提升特征工程的上限。</p>
+<p>众安保险的金融业务主要是基于信用保证保险，为用户提供信用借贷的服务。我们的特征更多用于风险策略和模型当中。我们的特征服务是服务于线上的金融业务，需要提供实时的金融风控能力，所以特征工程是以特征中台为核心建设的，特征中台围绕稳定性、准确性、实时性、高性能、扩展性五个核心指标，搭建了基于 Flink 的实时计算引擎、使用阿里云 Table Store 的高性能存储引擎，整个特征平台通过平台化为微服务化的架构方式来进行建设。</p>
+<p><img src="./img/v13.png" alt="img"></p>
+<h4 id="%E7%89%B9%E5%BE%81%E4%B8%AD%E5%8F%B0%E4%B8%9A%E5%8A%A1%E6%9E%B6%E6%9E%84">特征中台业务架构 <a class="heading-anchor-permalink" href="#%E7%89%B9%E5%BE%81%E4%B8%AD%E5%8F%B0%E4%B8%9A%E5%8A%A1%E6%9E%B6%E6%9E%84">#</a></h4>
+<p>上图是特征中台业务架构，其中包含零售自营业务，渠道合作业务，以及保险中收服务。这些业务都是通过业务中台、然后进入到决策引擎以及特征网关进行交互的。特征数据服务的出入口是特征网关，通过特征网关可以完成鉴权限流，特征编排和特征数据路由。底层支撑是特征的后台管理服务，包含特征的配置功能和实时特征计算、特征监控以及特征统计。下一层是一些子系统，这些子系统不但服务于特征中台，同时也可以单独的对外提供服务，包括三方数据管理平台，风险名单系统以及金融关系图谱平台等。</p>
+<p><img src="./img/v14.png" alt="img"></p>
+<h4 id="%E7%89%B9%E5%BE%81%E4%B8%AD%E5%8F%B0%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84">特征中台系统架构 <a class="heading-anchor-permalink" href="#%E7%89%B9%E5%BE%81%E4%B8%AD%E5%8F%B0%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84">#</a></h4>
+<p>整个特征中台是以微服务化构建的特征服务体系，特征数据来源主要是三方数据，征信数据，实时数据，离线数据。通过三方特征服务，特征组合服务，模型服务提供特征计算的一个风控数据系统。上游包括前台系统、决策系统以及保后系统。整个调用首先会经过特征网关进入数据接入层，之后进入特征计算层，进行相应的服务计算，最后一些需要再加工的特征会进入特征的组合层。下面是整个后台的管理层，实现特征管理的服务能力，比如说特征的管理平台，特征监控平台，特征计算平台以及调度平台。</p>
+<p><img src="./img/v15.png" alt="img"></p>
+<h4 id="%E7%89%B9%E5%BE%81%E5%B9%B3%E5%8F%B0%E6%9C%AA%E6%9D%A5%E8%A7%84%E5%88%92">特征平台未来规划 <a class="heading-anchor-permalink" href="#%E7%89%B9%E5%BE%81%E5%B9%B3%E5%8F%B0%E6%9C%AA%E6%9D%A5%E8%A7%84%E5%88%92">#</a></h4>
+<p>实现流批一体：实现线上线下特征的一体化，解决特征口径线上线下不一致以及开发效率方面的问题。</p>
+<p>提供在线机器学习：特征中台结合在线机器学习，实现模型的线上化验证能力，提高这个模型迭代的效率，缩短机器学习线上化周期。</p>
+<h3 id="%E6%80%BB%E7%BB%93">总结 <a class="heading-anchor-permalink" href="#%E6%80%BB%E7%BB%93">#</a></h3>
+<p>随着机器学习在越来越多的企业部署到更多的场景中，对于数据/Feature 的管理也越来越有挑战性。Feature Store的应用解决了企业内特征的难题，保证了线上/线下数据的一致性，活动中各家的实现细节可观看完整视频回放，希望大家有所收获。</p>
+<p>最后，欢迎大家持续关注 MLOps 与 Feature Store，加入交流群和我们一起讨论 MLOps 相关内容。</p>
+
+      </article>
+    </div>
+    <script>
+      // Load contents.json if you need it
+    </script>
+    <script>
+      // FROM http://purecss.io/js/ui.js
+      (function(window, document) {
+        var layout = document.getElementById("layout"),
+          menu = document.getElementById("menu"),
+          menuLink = document.getElementById("menuLink");
+
+        function toggleClass(element, className) {
+          var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+          for (; i < length; i++) {
+            if (classes[i] === className) {
+              classes.splice(i, 1);
+              break;
+            }
+          }
+          // The className is not found
+          if (length === classes.length) {
+            classes.push(className);
+          }
+
+          element.className = classes.join(" ");
+        }
+
+        menuLink.onclick = function(e) {
+          var active = "active";
+
+          e.preventDefault();
+          toggleClass(layout, active);
+          toggleClass(menu, active);
+          toggleClass(menuLink, active);
+        };
+      })(this, this.document);
+    </script>
+  </body>
+</html>

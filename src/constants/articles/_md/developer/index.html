@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-rendering: optimizeLegibility;
+        line-height: 1;
+        margin-top: 0;
+        color: #222;
+      }
+
+      blockquote + figcaption cite {
+        display: block;
+        font-size: inherit;
+        text-align: right;
+      }
+
+      body {
+        word-wrap: break-word;
+      }
+
+      pre code {
+        word-wrap: normal;
+      }
+
+      body {
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        color: #444;
+      }
+
+      h1 {
+        font-size: 2em;
+        /* 2*16 = 32 */
+      }
+
+      h2 {
+        font-size: 1.5em;
+        /* 1.5*16 = 24 */
+      }
+
+      h3 {
+        font-size: 1.17em;
+        /* 1.17*16 = 18.72 */
+      }
+
+      h4 {
+        font-size: 1em;
+        /* 1*16 = 16 */
+      }
+
+      h5 {
+        font-size: 0.83em;
+        /* 0.83*16 = 13.28 */
+      }
+
+      h6 {
+        font-size: 0.75em;
+        /* 0.75*16 = 12 */
+      }
+
+      h1 {
+        margin: 2.42424rem 0 1.454544rem;
+      }
+
+      h2 {
+        margin: 2.0202rem 0 1.21212rem;
+      }
+
+      h3 {
+        margin: 1.61616rem 0 1rem;
+      }
+
+      h4 {
+        margin: 1.21212rem 0 1;
+      }
+
+      h5 {
+        margin: 0.80808rem 0;
+      }
+
+      h6 {
+        margin: 0.70707rem 0;
+      }
+
+      p {
+        margin: auto auto 1.5rem;
+      }
+
+      small {
+        font-size: 65%;
+      }
+
+      input,
+      abbr,
+      acronym,
+      blockquote,
+      code,
+      kbd,
+      q,
+      samp,
+      var {
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre {
+        white-space: pre;
+      }
+
+      pre code {
+        white-space: -moz-pre-wrap;
+        white-space: pre-wrap;
+      }
+
+      code {
+        white-space: pre;
+        font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+      }
+
+      abbr {
+        -webkit-font-variant: small-caps;
+        -moz-font-variant: small-caps;
+        -ms-font-variant: small-caps;
+        font-variant: small-caps;
+        font-weight: 600;
+        text-transform: lowercase;
+        color: gray;
+      }
+
+      abbr[title]:hover {
+        cursor: help;
+      }
+
+      /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        color: #444;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: auto;
+      }
+
+      code,
+      pre {
+        background-color: #f5f5f5;
+        color: #444;
+        border-radius: 2px;
+        text-shadow: 0px 1px 0px white;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      }
+
+      pre code {
+        border: none;
+        box-shadow: none;
+      }
+
+      pre {
+        padding: 0.5em;
+      }
+
+      code {
+        display: inline-block;
+        padding: 0 0.5em;
+        line-height: 1.4;
+        font-size: 0.9em;
+      }
+
+      table {
+        border-spacing: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      table th,
+      table td {
+        padding: 0.3em 0.7em;
+      }
+
+      table th {
+        background-color: #f4f4f4;
+        border-bottom: 2px solid #444;
+      }
+
+      table td {
+        border: 1px solid #f5f5f5;
+      }
+
+      /* Add transition to containers so they can push in and out. */
+
+      #layout,
+      #menu,
+      .menu-link {
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -ms-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+      }
+
+      /* This is the parent `<div>` that contains the menu and the content area. */
+
+      #layout {
+        position: relative;
+        padding-left: 0;
+      }
+
+      #layout.active #menu {
+        left: 250px;
+        width: 250px;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+
+      /* The content `<div>` is where all your content goes. */
+
+      .content {
+        margin: 50px auto;
+        padding: 0 2em;
+        max-width: 80ex;
+        line-height: 1.6em;
+      }
+
+      /*
+      The `#menu` `<div>` is the parent `<div>` that contains the menu that
+      appears on the left side of the page.
+      */
+
+      #menu {
+        margin-left: -250px;
+        /* "#menu" width */
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        /* so the menu or its navicon stays above all content */
+        background: #f4f4f4;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.9em;
+      }
+
+      @media print {
+        #menu,
+        .menu-link {
+          display: none !important;
+        }
+      }
+
+      a,
+      a * {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      a:visited {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      /* All anchors inside the menu should be styled like this. */
+
+      #menu a {
+        display: block;
+        padding: 0.5em 0.5em;
+      }
+
+      #menu a:first-letter {
+        text-transform: capitalize;
+      }
+
+      #menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 1em 0.5em;
+      }
+
+      #menu ul ul {
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        border-left: 4px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Change color of the anchor links on hover/focus. */
+
+      #menu li a:hover,
+      #menu li a:focus {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      /* This styles the selected menu item `<li>`. */
+
+      #menu li a.active {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      /* This styles a link within a selected menu item `<li>`. */
+
+      #menu li a.active {
+        color: #222;
+      }
+
+      /* This styles the menu heading. */
+
+      #menu li.heading {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      #menu li.heading > * {
+        padding: 0.5em;
+        display: block;
+      }
+
+      #menu li.heading a {
+        color: #0c68af;
+      }
+
+      /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+      /*
+      `.menu-link` represents the responsive menu toggle that shows/hides on
+      small screens.
+      */
+
+      .menu-link {
+        position: fixed;
+        display: block;
+        /* show this only on small screens */
+        top: 0;
+        left: 0;
+        /* "#menu width" */
+        font-size: 10px;
+        /* change this value to increase/decrease button size */
+        z-index: 10;
+        width: 2em;
+        height: auto;
+        padding: 1.6em 1.2em;
+        border-radius: 0 2px 2px 0;
+      }
+
+      .menu-link:hover {
+        background: #f4f4f4;
+      }
+
+      .menu-link span {
+        position: relative;
+        display: block;
+      }
+
+      .menu-link span,
+      .menu-link span:before,
+      .menu-link span:after {
+        background-color: #555;
+        width: 100%;
+        height: 0.2em;
+        border-radius: 1em;
+      }
+
+      .menu-link span:before,
+      .menu-link span:after {
+        position: absolute;
+        margin-top: -0.6em;
+        content: " ";
+      }
+
+      .menu-link span:after {
+        margin-top: 0.6em;
+      }
+
+      /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+      @media (min-width: 48em) {
+        .header,
+        .content {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+
+        #layout {
+          padding-left: 250px;
+          /* left col width "#menu" */
+          left: 0;
+        }
+        #menu {
+          left: 250px;
+        }
+
+        .menu-link {
+          position: fixed;
+          left: 250px;
+          display: none;
+        }
+
+        #layout.active .menu-link {
+          left: 250px;
+        }
+      }
+
+      @media (max-width: 48em) {
+        /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+         * Make the window small.
+         * Tap the menu to trigger the active state.
+         * Make the window large again.
+         */
+        #layout.active {
+          position: relative;
+          left: 250px;
+        }
+      }
+
+      /* Heading anchors and permalinks */
+      h1[id],
+      h2[id],
+      h3[id],
+      h4[id],
+      h5[id],
+      h6[id] {
+        position: relative;
+      }
+      .heading-anchor-permalink {
+        /* Position the permalink to the left of the title */
+        position: absolute;
+        right: 100%;
+        /* Add some spacing as padding to not lose the hover */
+        padding-right: 0.6rem;
+        /* Make it only visible on heading hover, see below */
+        opacity: 0;
+      }
+      h1[id]:hover .heading-anchor-permalink,
+      h2[id]:hover .heading-anchor-permalink,
+      h3[id]:hover .heading-anchor-permalink,
+      h4[id]:hover .heading-anchor-permalink,
+      h5[id]:hover .heading-anchor-permalink,
+      h6[id]:hover .heading-anchor-permalink {
+        opacity: 0.5;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div id="layout">
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+      <nav id="menu">
+        <ul>
+<li class="heading"><a class="" href="../ai-summit/index.html">ai summit</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../csdn-join/index.html">csdn join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../dataops-review/index.html">dataops review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="active" href="index.html">developer</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../devops-review/index.html">devops review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../devops_mlops/index.html">devops mlops</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../dian-join/index.html">dian join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../features-store-v3/index.html">features store v3</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../fs-v4-review/index.html">fs v4 review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../lushouqun-confirm/index.html">lushouqun confirm</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mengniu-join/index.html">mengniu join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mengniu/index.html">mengniu</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mlops-commitee/index.html">mlops commitee</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../shenxin-join/index.html">shenxin join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../sql-boy/index.html">sql boy</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../talk-about-transition/index.html">talk about transition</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../transition-review/index.html">transition review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../zte-join/index.html">zte join</a></li>
+<ul>
+
+</ul>
+</ul>
+      </nav>
+      <article id="main" class="content">
+        <h1 id="%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%A6%82%E4%BD%95%E6%8B%A5%E6%8A%B1%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%EF%BC%9F">工程师如何拥抱数字化转型？ <a class="heading-anchor-permalink" href="#%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%A6%82%E4%BD%95%E6%8B%A5%E6%8A%B1%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%EF%BC%9F">#</a></h1>
+<p>星策开源  2022-08-19 18:00</p>
+<h2 id="%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%E6%97%B6%E4%BB%A3">数字化转型时代 <a class="heading-anchor-permalink" href="#%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%E6%97%B6%E4%BB%A3">#</a></h2>
+<p>这是一个数字化的时代。数字化已成为了当下社会的主旋律之一。正如“十四五”规划中重点提到的，“ 加快数字化发展，建设数字中国“，加快推动数字产业化，产业数字化。</p>
+<p>人类已经经历了三次工业革命，对应蒸汽时代、电气时代和信息时代。在信息时代，信息技术驱动的第三次工业革命已经让互联网和移动互联网成为了我们生活中必不可缺的一部分。</p>
+<p>而现在，以大数据和人工智能技术为驱动的第四次工业革命，正在紧锣密鼓的进入我们的生活。</p>
+<p>1998 年图灵奖获得者 Jim Gray 在2007年提出“四个范式”的概念，将人类历史的发展科学，分成了四个阶段，及“四个范式”。其实，人类科学史就是范式的历史，伴随着范式的成长，人类也在不断地成长。</p>
+<p>第四范式为：实践科学、理论科学、技术科学和数据科学。</p>
+<p>疫情加速了全球数字化的进程，国内在一些行业的数字化转型已经引领全球。在这样的浪潮里，身处数字化建设中心的工程师要如何利用自己的职业优势，来利用好数字化转型带来的机遇与挑战呢？</p>
+<h2 id="%E6%9C%BA%E9%81%87%E4%B8%8E%E6%8C%91%E6%88%98">机遇与挑战 <a class="heading-anchor-permalink" href="#%E6%9C%BA%E9%81%87%E4%B8%8E%E6%8C%91%E6%88%98">#</a></h2>
+<p>对于工程师来说，有以下几类机会：</p>
+<h3 id="ai-%E5%B7%A5%E7%A8%8B%E5%8C%96%EF%BC%88mlops%EF%BC%89">AI 工程化（MLOps） <a class="heading-anchor-permalink" href="#ai-%E5%B7%A5%E7%A8%8B%E5%8C%96%EF%BC%88mlops%EF%BC%89">#</a></h3>
+<p>2021年10月，在Gartner发布的《2022年十二大重要战略技术趋势》中，Gartner将“AI Engineering（AI工程化）”列为企业创新的重要加速器。当前，较新的“AI Engineering”大致与较早的“MLOps”是同义词，这两个概念的背景也类似。有 DevOps，则对应就提出了 MLOps，有 Software Engineering，则对应就提出了 AI Engineering。</p>
+<p><img src="./img/a2.png" alt="v2"></p>
+<p>对于工程师，尤其是 AI 工程师来讲，了解  MLOps，参与到 MLOps 的技术社区当中去，通过不断地碰撞和尝试，加深自己对不同新技术的认知，是一件值得挑战的事情。</p>
+<p>星策社区自 2022 年 3 月 30 号发布以来，举办过三次 MLOps 相关主题的技术活动，感兴趣的同学可以点击<a href="https://space.bilibili.com/1209377375?spm_id_from=333.337.search-card.all.click">活动回顾</a></p>
+<p>此外，2022年8月6日，星策社区与 51 CTO 联合主办了 AISummit “ MLOps 最佳实践” 专题，为国内首个MLOps主题专场：AISummit 国内首个MLOps专场回顾，最佳实战经验与前沿趋势！</p>
+<h3 id="%E6%8B%A5%E6%8A%B1%E5%BC%80%E6%BA%90">拥抱开源 <a class="heading-anchor-permalink" href="#%E6%8B%A5%E6%8A%B1%E5%BC%80%E6%BA%90">#</a></h3>
+<p>身处数字化时代的软件开发，往往“越开放、越强大”。特斯拉开源了所有的汽车相关专利，但仍是新能源汽车领域的技术领袖。对于今天的软件开发，如何用好开源软件已经是一个再普适不过的话题。</p>
+<p>身为工程师，拥抱开源就成为了一种极佳的选择。参与开源社区，与社区共同成长，在社区内拥抱最新的技术和最真实的使用反馈。开源意味着持续不断地成长、进化。</p>
+<p>关于开源更多内容，可参考星策社区发起人-谭中意老师关于开源的相关文章。</p>
+<p>工程师如何对待开源：<a href="https://my.oschina.net/u/3742410/blog/5526206">https://my.oschina.net/u/3742410/blog/5526206</a></p>
+<p>开源到底是什么：<a href="https://my.oschina.net/u/3742410/blog/5520919">https://my.oschina.net/u/3742410/blog/5520919</a></p>
+<p>星策社区目前开源项目包括：OpenMLDB、DSS、ADlik，欢迎工程师同学积极参与共建，同时也期待更多开源项目加入星策社区。</p>
+<p><img src="./img/a3.png" alt="v3"></p>
+<p>OpenMLDB：<a href="https://openmldb.ai/">https://openmldb.ai/</a></p>
+<p>DSS：<a href="https://github.com/WeBankFinTech/DataSphereStudio">https://github.com/WeBankFinTech/DataSphereStudio</a></p>
+<p>ADlik：<a href="https://github.com/Adlik/Adlik">https://github.com/Adlik/Adlik</a></p>
+<h3 id="%E6%8B%A5%E6%8A%B1%E4%B8%9A%E5%8A%A1%EF%BC%8C%E5%88%9B%E9%80%A0%E4%B8%9A%E5%8A%A1%E4%BB%B7%E5%80%BC">拥抱业务，创造业务价值 <a class="heading-anchor-permalink" href="#%E6%8B%A5%E6%8A%B1%E4%B8%9A%E5%8A%A1%EF%BC%8C%E5%88%9B%E9%80%A0%E4%B8%9A%E5%8A%A1%E4%BB%B7%E5%80%BC">#</a></h3>
+<p>在数字化转型的时代浪潮里，工程师的日常工作不可避免要关注技术本身，但如何跳出过度关注技术细节的怪圈。就要跳出去，与不同背景的同事、不同技术领域的社区成员进行探讨与交流。</p>
+<p>开放的沟通让工程师能更加了解客户的需求，场景的设计以及技术实际运用到场景中创造了怎样的价值。</p>
+<p>未来，星策社区会邀请在数字化转型领域取得较大成果的企业来进行数字化转型业务相关的分享，深入了解聚焦到具体的业务场景中，技术是如何作为基石支撑转型业务大放异彩，敬请期待。</p>
+<p><img src="./img/a4.png" alt="v4"></p>
+<h2 id="%E5%85%B3%E4%BA%8E%E6%98%9F%E7%AD%96%E7%A4%BE%E5%8C%BA">关于星策社区 <a class="heading-anchor-permalink" href="#%E5%85%B3%E4%BA%8E%E6%98%9F%E7%AD%96%E7%A4%BE%E5%8C%BA">#</a></h2>
+<p>如今，国家大力推进数字经济蓬勃发展，千行百业都在紧抓时代机遇转型升级。业界亟需一个交流、共享的平台，合力破解智能化转型困境。</p>
+<p>国内首个企业智能化转型开源社区——星策社区应时而生，该社区以共享共建的方式连接企业和 AI，助力企业智能转型成功为使命，聚焦于企业智能转型，是一个由企事业单位、高等院校、科研单位、非营利性组织等各方按照自愿、平等、开源、协作的基础上组成非盈利性开源社区。</p>
+<p>与过往多聚焦在单一技术领域的开源社区不同，星策社区将持续探索并共享共建企业智能转型“方法论”、优质案例、最佳实践及支撑企业智能转型的开源技术，助力企业进行智能化转型；同时社区也将定期举办不同类型活动，邀请各领域的顶尖专家剖析行业、技术发展趋势。</p>
+<p>有关星策智能化转型开源社区的更多详情，请点击「阅读原文」访问社区官网（<a href="http://startogether.ai/%EF%BC%89%E3%80%82">http://startogether.ai/）。</a></p>
+
+      </article>
+    </div>
+    <script>
+      // Load contents.json if you need it
+    </script>
+    <script>
+      // FROM http://purecss.io/js/ui.js
+      (function(window, document) {
+        var layout = document.getElementById("layout"),
+          menu = document.getElementById("menu"),
+          menuLink = document.getElementById("menuLink");
+
+        function toggleClass(element, className) {
+          var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+          for (; i < length; i++) {
+            if (classes[i] === className) {
+              classes.splice(i, 1);
+              break;
+            }
+          }
+          // The className is not found
+          if (length === classes.length) {
+            classes.push(className);
+          }
+
+          element.className = classes.join(" ");
+        }
+
+        menuLink.onclick = function(e) {
+          var active = "active";
+
+          e.preventDefault();
+          toggleClass(layout, active);
+          toggleClass(menu, active);
+          toggleClass(menuLink, active);
+        };
+      })(this, this.document);
+    </script>
+  </body>
+</html>

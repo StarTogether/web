@@ -1,0 +1,33 @@
+.art-list-container {
+    .act-list {
+        padding: 60px 160px;
+    }
+    .act-list-bg {
+        margin-top: -64px;
+        z-index: -1;
+    }
+    .act-list-title {
+        position: absolute;
+        top: 120px;
+        left: 160px;
+        font-size: 32px;
+        font-weight: 400;
+    }
+    a + a {
+        margin-left: 6px;
+    }
+}
+
+@media (max-width: 700px) {
+    .art-list-container {
+        .act-list-title {
+            left: 80px;
+        }
+        .act-list {
+            padding: 24px 6%;
+        }
+        .main-newact1 {
+            flex-wrap: wrap;
+        }
+    }
+}

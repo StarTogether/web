@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-rendering: optimizeLegibility;
+        line-height: 1;
+        margin-top: 0;
+        color: #222;
+      }
+
+      blockquote + figcaption cite {
+        display: block;
+        font-size: inherit;
+        text-align: right;
+      }
+
+      body {
+        word-wrap: break-word;
+      }
+
+      pre code {
+        word-wrap: normal;
+      }
+
+      body {
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        color: #444;
+      }
+
+      h1 {
+        font-size: 2em;
+        /* 2*16 = 32 */
+      }
+
+      h2 {
+        font-size: 1.5em;
+        /* 1.5*16 = 24 */
+      }
+
+      h3 {
+        font-size: 1.17em;
+        /* 1.17*16 = 18.72 */
+      }
+
+      h4 {
+        font-size: 1em;
+        /* 1*16 = 16 */
+      }
+
+      h5 {
+        font-size: 0.83em;
+        /* 0.83*16 = 13.28 */
+      }
+
+      h6 {
+        font-size: 0.75em;
+        /* 0.75*16 = 12 */
+      }
+
+      h1 {
+        margin: 2.42424rem 0 1.454544rem;
+      }
+
+      h2 {
+        margin: 2.0202rem 0 1.21212rem;
+      }
+
+      h3 {
+        margin: 1.61616rem 0 1rem;
+      }
+
+      h4 {
+        margin: 1.21212rem 0 1;
+      }
+
+      h5 {
+        margin: 0.80808rem 0;
+      }
+
+      h6 {
+        margin: 0.70707rem 0;
+      }
+
+      p {
+        margin: auto auto 1.5rem;
+      }
+
+      small {
+        font-size: 65%;
+      }
+
+      input,
+      abbr,
+      acronym,
+      blockquote,
+      code,
+      kbd,
+      q,
+      samp,
+      var {
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre {
+        white-space: pre;
+      }
+
+      pre code {
+        white-space: -moz-pre-wrap;
+        white-space: pre-wrap;
+      }
+
+      code {
+        white-space: pre;
+        font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+      }
+
+      abbr {
+        -webkit-font-variant: small-caps;
+        -moz-font-variant: small-caps;
+        -ms-font-variant: small-caps;
+        font-variant: small-caps;
+        font-weight: 600;
+        text-transform: lowercase;
+        color: gray;
+      }
+
+      abbr[title]:hover {
+        cursor: help;
+      }
+
+      /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        color: #444;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: auto;
+      }
+
+      code,
+      pre {
+        background-color: #f5f5f5;
+        color: #444;
+        border-radius: 2px;
+        text-shadow: 0px 1px 0px white;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      }
+
+      pre code {
+        border: none;
+        box-shadow: none;
+      }
+
+      pre {
+        padding: 0.5em;
+      }
+
+      code {
+        display: inline-block;
+        padding: 0 0.5em;
+        line-height: 1.4;
+        font-size: 0.9em;
+      }
+
+      table {
+        border-spacing: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      table th,
+      table td {
+        padding: 0.3em 0.7em;
+      }
+
+      table th {
+        background-color: #f4f4f4;
+        border-bottom: 2px solid #444;
+      }
+
+      table td {
+        border: 1px solid #f5f5f5;
+      }
+
+      /* Add transition to containers so they can push in and out. */
+
+      #layout,
+      #menu,
+      .menu-link {
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -ms-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+      }
+
+      /* This is the parent `<div>` that contains the menu and the content area. */
+
+      #layout {
+        position: relative;
+        padding-left: 0;
+      }
+
+      #layout.active #menu {
+        left: 250px;
+        width: 250px;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+
+      /* The content `<div>` is where all your content goes. */
+
+      .content {
+        margin: 50px auto;
+        padding: 0 2em;
+        max-width: 80ex;
+        line-height: 1.6em;
+      }
+
+      /*
+      The `#menu` `<div>` is the parent `<div>` that contains the menu that
+      appears on the left side of the page.
+      */
+
+      #menu {
+        margin-left: -250px;
+        /* "#menu" width */
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        /* so the menu or its navicon stays above all content */
+        background: #f4f4f4;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.9em;
+      }
+
+      @media print {
+        #menu,
+        .menu-link {
+          display: none !important;
+        }
+      }
+
+      a,
+      a * {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      a:visited {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      /* All anchors inside the menu should be styled like this. */
+
+      #menu a {
+        display: block;
+        padding: 0.5em 0.5em;
+      }
+
+      #menu a:first-letter {
+        text-transform: capitalize;
+      }
+
+      #menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 1em 0.5em;
+      }
+
+      #menu ul ul {
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        border-left: 4px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Change color of the anchor links on hover/focus. */
+
+      #menu li a:hover,
+      #menu li a:focus {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      /* This styles the selected menu item `<li>`. */
+
+      #menu li a.active {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      /* This styles a link within a selected menu item `<li>`. */
+
+      #menu li a.active {
+        color: #222;
+      }
+
+      /* This styles the menu heading. */
+
+      #menu li.heading {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      #menu li.heading > * {
+        padding: 0.5em;
+        display: block;
+      }
+
+      #menu li.heading a {
+        color: #0c68af;
+      }
+
+      /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+      /*
+      `.menu-link` represents the responsive menu toggle that shows/hides on
+      small screens.
+      */
+
+      .menu-link {
+        position: fixed;
+        display: block;
+        /* show this only on small screens */
+        top: 0;
+        left: 0;
+        /* "#menu width" */
+        font-size: 10px;
+        /* change this value to increase/decrease button size */
+        z-index: 10;
+        width: 2em;
+        height: auto;
+        padding: 1.6em 1.2em;
+        border-radius: 0 2px 2px 0;
+      }
+
+      .menu-link:hover {
+        background: #f4f4f4;
+      }
+
+      .menu-link span {
+        position: relative;
+        display: block;
+      }
+
+      .menu-link span,
+      .menu-link span:before,
+      .menu-link span:after {
+        background-color: #555;
+        width: 100%;
+        height: 0.2em;
+        border-radius: 1em;
+      }
+
+      .menu-link span:before,
+      .menu-link span:after {
+        position: absolute;
+        margin-top: -0.6em;
+        content: " ";
+      }
+
+      .menu-link span:after {
+        margin-top: 0.6em;
+      }
+
+      /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+      @media (min-width: 48em) {
+        .header,
+        .content {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+
+        #layout {
+          padding-left: 250px;
+          /* left col width "#menu" */
+          left: 0;
+        }
+        #menu {
+          left: 250px;
+        }
+
+        .menu-link {
+          position: fixed;
+          left: 250px;
+          display: none;
+        }
+
+        #layout.active .menu-link {
+          left: 250px;
+        }
+      }
+
+      @media (max-width: 48em) {
+        /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+         * Make the window small.
+         * Tap the menu to trigger the active state.
+         * Make the window large again.
+         */
+        #layout.active {
+          position: relative;
+          left: 250px;
+        }
+      }
+
+      /* Heading anchors and permalinks */
+      h1[id],
+      h2[id],
+      h3[id],
+      h4[id],
+      h5[id],
+      h6[id] {
+        position: relative;
+      }
+      .heading-anchor-permalink {
+        /* Position the permalink to the left of the title */
+        position: absolute;
+        right: 100%;
+        /* Add some spacing as padding to not lose the hover */
+        padding-right: 0.6rem;
+        /* Make it only visible on heading hover, see below */
+        opacity: 0;
+      }
+      h1[id]:hover .heading-anchor-permalink,
+      h2[id]:hover .heading-anchor-permalink,
+      h3[id]:hover .heading-anchor-permalink,
+      h4[id]:hover .heading-anchor-permalink,
+      h5[id]:hover .heading-anchor-permalink,
+      h6[id]:hover .heading-anchor-permalink {
+        opacity: 0.5;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div id="layout">
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+      <nav id="menu">
+        <ul>
+<li class="heading"><a class="" href="../ai-summit/index.html">ai summit</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../csdn-join/index.html">csdn join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../dataops-review/index.html">dataops review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../developer/index.html">developer</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../devops-review/index.html">devops review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../devops_mlops/index.html">devops mlops</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../dian-join/index.html">dian join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../features-store-v3/index.html">features store v3</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../fs-v4-review/index.html">fs v4 review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../lushouqun-confirm/index.html">lushouqun confirm</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mengniu-join/index.html">mengniu join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="active" href="index.html">mengniu</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mlops-commitee/index.html">mlops commitee</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../shenxin-join/index.html">shenxin join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../sql-boy/index.html">sql boy</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../talk-about-transition/index.html">talk about transition</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../transition-review/index.html">transition review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../zte-join/index.html">zte join</a></li>
+<ul>
+
+</ul>
+</ul>
+      </nav>
+      <article id="main" class="content">
+        <h1 id="%E8%92%99%E7%89%9B%E5%89%8D%E6%95%B0%E7%A7%91%E9%83%A8%E6%80%BB%E7%9B%91%E5%88%98%E7%91%9E%E5%AE%9D%E5%88%86%E4%BA%AB%E8%92%99%E7%89%9B%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%E6%88%90%E6%9E%9C-%E6%98%9F%E7%AD%96%E7%A4%BE%E5%8C%BA%E5%A4%A7%E5%92%96%E8%AF%B4%E7%AC%AC%E4%B8%80%E5%BC%B9">蒙牛前数科部总监刘瑞宝分享蒙牛数字化转型成果-星策社区大咖说第一弹 <a class="heading-anchor-permalink" href="#%E8%92%99%E7%89%9B%E5%89%8D%E6%95%B0%E7%A7%91%E9%83%A8%E6%80%BB%E7%9B%91%E5%88%98%E7%91%9E%E5%AE%9D%E5%88%86%E4%BA%AB%E8%92%99%E7%89%9B%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%E6%88%90%E6%9E%9C-%E6%98%9F%E7%AD%96%E7%A4%BE%E5%8C%BA%E5%A4%A7%E5%92%96%E8%AF%B4%E7%AC%AC%E4%B8%80%E5%BC%B9">#</a></h1>
+<p>2022-10-21 19:00 星策社区</p>
+<blockquote>
+<p>“ 群策群力，一同探讨企业数字化转型。”</p>
+</blockquote>
+<p>哈喽大家好，这里是星策社区举办的星策转型大咖说的第一期直播节目，我是主持人谭中意，是星策开源社区的发起人。星策开源社区是国内首个聚焦企业智能化转型的开源社区。使命是连接企业数字化、AI、开源，共建企业数字化所需要的方法论、案例、实践和技术，加速各行各业的转型升级。而星策社区大咖说是星策社区发起的一项面向企业的数字化转型的深度访谈节目。通过访谈数字化转型中的领先企业，分享他们的经验和案例，从而为当下的企业带来一些启发。</p>
+<p>本期节目我们有幸邀请到了蒙牛的前数科部总监 刘瑞宝先生，就蒙牛的数智化转型展开探讨。</p>
+<p><img src="./img/v1.jpeg" alt="v1"></p>
+<h2 id="%E5%A4%A7%E5%AE%B6%E9%83%BD%E7%9F%A5%E9%81%93%E8%92%99%E7%89%9B%E6%98%AF%E4%B8%AD%E5%9B%BD%E9%A2%86%E5%85%88%E7%9A%84%E4%B9%B3%E5%88%B6%E5%93%81%E7%94%9F%E4%BA%A7%E5%95%86%EF%BC%8C%E6%88%90%E7%AB%8B%E4%BA%8E1999-%E5%B9%B4%EF%BC%8C%E8%B7%9D%E4%BB%8A%E5%B7%B2%E7%BB%8F%E6%9C%8920%E5%A4%9A%E5%B9%B4%E5%8E%86%E5%8F%B2%E4%BA%86%EF%BC%8C%E4%B8%8D%E4%B9%85%E5%89%8D%EF%BC%8C%E5%9C%A8%E4%B8%AD%E5%A4%AE%E4%BA%8C%E5%8F%B7%E5%AF%B9%E8%AF%9D%E8%8A%82%E7%9B%AE%E4%B8%8A%E8%92%99%E7%89%9B%E7%9A%84%E6%80%BB%E8%A3%81%E5%8F%88%E5%86%8D%E6%AC%A1%E6%8F%90%E5%87%BA%E4%BA%86%E5%86%8D%E5%88%9B%E4%B8%80%E4%B8%AA%E8%92%99%E7%89%9B%E7%9A%84%E6%88%98%E7%95%A5%E8%A7%84%E5%88%92%EF%BC%8C%E8%A6%81%E6%8A%8A%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%E4%BD%9C%E4%B8%BA%E8%92%99%E7%89%9B%E7%9A%84%E6%A0%B8%E5%BF%83%E6%88%98%E7%95%A5%EF%BC%8C%E7%94%A8%E4%BA%94%E5%B9%B4%E6%97%B6%E9%97%B4%E5%86%8D%E5%88%9B%E4%B8%80%E4%B8%AA%E6%96%B0%E8%92%99%E7%89%9B%EF%BC%8C%E6%9E%84%E5%BB%BA%E4%B8%AD%E5%9B%BD%E4%B9%B3%E5%93%81%E4%BC%81%E4%B8%9A%E5%8F%91%E5%B1%95%E7%9A%84%E6%96%B0%E6%A0%BC%E5%B1%80%E3%80%82%E8%AF%B7%E9%97%AE%E8%92%99%E7%89%9B%E5%88%B6%E5%AE%9A%E4%BA%86%E6%80%8E%E6%A0%B7%E7%9A%84%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%E8%A7%84%E5%88%92%E5%91%A2%EF%BC%9F">大家都知道蒙牛是中国领先的乳制品生产商，成立于1999 年，距今已经有20多年历史了，不久前，在中央二号对话节目上蒙牛的总裁又再次提出了再创一个蒙牛的战略规划，要把数字化转型作为蒙牛的核心战略，用五年时间再创一个新蒙牛，构建中国乳品企业发展的新格局。请问蒙牛制定了怎样的数字化转型规划呢？ <a class="heading-anchor-permalink" href="#%E5%A4%A7%E5%AE%B6%E9%83%BD%E7%9F%A5%E9%81%93%E8%92%99%E7%89%9B%E6%98%AF%E4%B8%AD%E5%9B%BD%E9%A2%86%E5%85%88%E7%9A%84%E4%B9%B3%E5%88%B6%E5%93%81%E7%94%9F%E4%BA%A7%E5%95%86%EF%BC%8C%E6%88%90%E7%AB%8B%E4%BA%8E1999-%E5%B9%B4%EF%BC%8C%E8%B7%9D%E4%BB%8A%E5%B7%B2%E7%BB%8F%E6%9C%8920%E5%A4%9A%E5%B9%B4%E5%8E%86%E5%8F%B2%E4%BA%86%EF%BC%8C%E4%B8%8D%E4%B9%85%E5%89%8D%EF%BC%8C%E5%9C%A8%E4%B8%AD%E5%A4%AE%E4%BA%8C%E5%8F%B7%E5%AF%B9%E8%AF%9D%E8%8A%82%E7%9B%AE%E4%B8%8A%E8%92%99%E7%89%9B%E7%9A%84%E6%80%BB%E8%A3%81%E5%8F%88%E5%86%8D%E6%AC%A1%E6%8F%90%E5%87%BA%E4%BA%86%E5%86%8D%E5%88%9B%E4%B8%80%E4%B8%AA%E8%92%99%E7%89%9B%E7%9A%84%E6%88%98%E7%95%A5%E8%A7%84%E5%88%92%EF%BC%8C%E8%A6%81%E6%8A%8A%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%E4%BD%9C%E4%B8%BA%E8%92%99%E7%89%9B%E7%9A%84%E6%A0%B8%E5%BF%83%E6%88%98%E7%95%A5%EF%BC%8C%E7%94%A8%E4%BA%94%E5%B9%B4%E6%97%B6%E9%97%B4%E5%86%8D%E5%88%9B%E4%B8%80%E4%B8%AA%E6%96%B0%E8%92%99%E7%89%9B%EF%BC%8C%E6%9E%84%E5%BB%BA%E4%B8%AD%E5%9B%BD%E4%B9%B3%E5%93%81%E4%BC%81%E4%B8%9A%E5%8F%91%E5%B1%95%E7%9A%84%E6%96%B0%E6%A0%BC%E5%B1%80%E3%80%82%E8%AF%B7%E9%97%AE%E8%92%99%E7%89%9B%E5%88%B6%E5%AE%9A%E4%BA%86%E6%80%8E%E6%A0%B7%E7%9A%84%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%E8%A7%84%E5%88%92%E5%91%A2%EF%BC%9F">#</a></h2>
+<p>为什么做转型，我们要从商业的本质去探讨。在蒙牛的角度，商业的本质有什么变化？我们发现从这么多年，商业的本质其实没有变。商业的本质就在于我们能够多卖，能够卖得更好。那既然本质没有变，那什么变了呢？</p>
+<p>其实是商业的模式变了，消费者变了，我们的技术变了，我们的组织要求变了。</p>
+<p>那我们看消费者现在变成了什么样子，消费者变成了一个无时无刻的需求，无处不在的需求以及它需要无所不能消费的一个习惯。</p>
+<p>消费者变了，如果我们再不去改变原有的商业模式，可能就不能跟得上时代的发展。</p>
+<p>那在商业模式变化的过程中，我们怎么去做转型，这就是摆在我们面前的一个课题。</p>
+<p>那么，我们要怎么去做转型呢？我们分析了自己的一个现状，我们首先要三个转变：</p>
+<p><img src="./img/v2.jpeg" alt="v2"></p>
+<p>1.第一个转变是整个面向消费者的转变，从面向品牌转到面向消费者，既从产品思维向用户思维转变。
+2.第二个转变是资源模式的转变。以前蒙牛资源其实都是条块切割的，按照事业部去划分资源。现在我们是建立了这种平台模式，既从资源部门所有向跨部门平台化转变。
+3.第三个转变是驱动力的转变。以前驱动是交易型驱动，而现在我们要变成运营型驱动，既从交易驱动向运营服务驱动转变。</p>
+<p>那么三个转变如何实现，其实给蒙牛提了一个新的课题。蒙牛定下来要做几件事情：</p>
+<p>1.全域消费者运营；</p>
+<p>2.全渠道销售与履约；</p>
+<p>3.智慧供应链；</p>
+<p>那从这里边，其实这就引出了蒙牛提出的四个在线，四个在线就是渠道在线、消费者在线、供应链在线和管理在线。</p>
+<p>提出“四个在线”的原因是因我们在设计蓝图的过程中，是业务为中心出发的。</p>
+<p>如果不以业务为核心的数字化转型都是假转型。</p>
+<p>任何的数字化转型都会触动业务、流程的变革。</p>
+<h2 id="%E8%92%99%E7%89%9B%E6%98%AF%E5%87%BA%E4%BA%8E%E4%BB%80%E4%B9%88%E8%80%83%E8%99%91%EF%BC%8C%E4%BB%8E%E5%9B%9B%E4%B8%AA%E5%9C%A8%E7%BA%BF%E5%BC%80%E5%A7%8B%E5%81%9A%E8%B5%B7%E7%9A%84%E5%91%A2%EF%BC%9F">蒙牛是出于什么考虑，从四个在线开始做起的呢？ <a class="heading-anchor-permalink" href="#%E8%92%99%E7%89%9B%E6%98%AF%E5%87%BA%E4%BA%8E%E4%BB%80%E4%B9%88%E8%80%83%E8%99%91%EF%BC%8C%E4%BB%8E%E5%9B%9B%E4%B8%AA%E5%9C%A8%E7%BA%BF%E5%BC%80%E5%A7%8B%E5%81%9A%E8%B5%B7%E7%9A%84%E5%91%A2%EF%BC%9F">#</a></h2>
+<p>消费者在线主要用于全域的消费者运营。</p>
+<p>渠道在线针对全渠道的销售与履约。</p>
+<p>供应链在线主要提出了这种降本增效的智能化柔性供应链。</p>
+<p>管理主要是通过更精细化的管理降本增效。</p>
+<p><img src="./img/v3.jpeg" alt="v3"></p>
+<h2 id="%E5%9C%A8%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%E8%BF%87%E7%A8%8B%E4%B8%AD%EF%BC%8C%E6%B8%A0%E9%81%93%E5%9C%A8%E7%BA%BF%E8%A2%AB%E8%AE%A4%E4%B8%BA%E6%98%AF%E8%92%99%E7%89%9B%E6%9C%80%E4%B8%BB%E8%A6%81%E7%9A%84%E7%9B%AE%E6%A0%87%E4%B9%8B%E4%B8%80%EF%BC%8C%E9%82%A3%E4%B9%88%E8%92%99%E7%89%9B%E5%92%8C%E6%B8%A0%E9%81%93%E7%9A%84%E5%85%B3%E7%B3%BB%E4%B9%8B%E5%89%8D%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%E7%9A%84%EF%BC%8C%E8%A6%81%E5%8F%98%E6%88%90%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%EF%BC%8C%E8%B7%AF%E5%BE%84%E5%8F%88%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%E7%9A%84">在数字化转型过程中，渠道在线被认为是蒙牛最主要的目标之一，那么蒙牛和渠道的关系之前是什么样子的，要变成什么样子，路径又是什么样子的 <a class="heading-anchor-permalink" href="#%E5%9C%A8%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%E8%BF%87%E7%A8%8B%E4%B8%AD%EF%BC%8C%E6%B8%A0%E9%81%93%E5%9C%A8%E7%BA%BF%E8%A2%AB%E8%AE%A4%E4%B8%BA%E6%98%AF%E8%92%99%E7%89%9B%E6%9C%80%E4%B8%BB%E8%A6%81%E7%9A%84%E7%9B%AE%E6%A0%87%E4%B9%8B%E4%B8%80%EF%BC%8C%E9%82%A3%E4%B9%88%E8%92%99%E7%89%9B%E5%92%8C%E6%B8%A0%E9%81%93%E7%9A%84%E5%85%B3%E7%B3%BB%E4%B9%8B%E5%89%8D%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%E7%9A%84%EF%BC%8C%E8%A6%81%E5%8F%98%E6%88%90%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%EF%BC%8C%E8%B7%AF%E5%BE%84%E5%8F%88%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%E7%9A%84">#</a></h2>
+<p>其实蒙牛过去和渠道商之间是一个相爱相杀的关系。双方有共同的利益，但渠道和品牌之间也有一些小的矛盾。</p>
+<p>那么通过渠道在线可以怎么做，做什么呢，以前的渠道主要以管理为主，而现在渠道在线主要是以赋能为主，赋能渠道商，要让渠道商有能力去赚钱，这样蒙牛才能更赚钱。</p>
+<p>那么在这个过程中，我们抓住了三个环节：</p>
+<p><img src="./img/v4.jpeg" alt="v4"></p>
+<p>第一个环节就是针对我们渠道的交易，如何去让这个交易扩大化，所以说蒙牛推出了一个大智网的平台，那么这一块呢，让渠道商能够在智网平台上去感知用户购买行为，进而去下单。</p>
+<p>第二个环节就是履约，那么交易完成后，如何更快、更方便的去履约。同渠道商共创履约模式。</p>
+<p>第三个环节是面向渠道如何运营，和渠道商共同去运营消费者。蒙牛也提出了一个 F2B2b2C 的一个全链路的打通。那么这里边我们叫 BC 一体化。</p>
+<p>建立 BC 一体化后，形成了蒙牛的一个数据资产。当然在这个过程中，我们也遇到了很多的阻力。</p>
+<p>最大的阻力就是来自业务和技术之间的匹配。解决这个阻力就要业务和技术结合，所以说蒙牛的数字化转型是业务去牵头，技术去赋能的一个过程。体现最强烈的是，业务的负责人一定要参与进来，并且业务的负责人能主导这个项目，那这个项目才有可能成功。</p>
+<h2 id="%E5%AF%B9%E4%BA%8E%E4%B9%B3%E4%BC%81%E6%9D%A5%E8%AF%B4%EF%BC%8C%E4%BE%9B%E5%BA%94%E9%93%BE%E5%B0%B1%E6%98%AF%E7%94%9F%E5%91%BD%E7%BA%BF%EF%BC%8C%E4%BE%9B%E5%BA%94%E9%93%BE%E7%9A%84%E5%8D%8F%E5%90%8C%EF%BC%8C%E6%98%AF%E6%B6%89%E5%8F%8A%E5%88%B0%E5%90%84%E4%B8%AA%E7%8E%AF%E8%8A%82%E3%80%82%E9%82%A3%E4%B9%88%E8%92%99%E7%89%9B%E7%9A%84%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%EF%BC%8C%E5%AF%B9%E4%BA%8E%E4%BE%9B%E5%BA%94%E9%93%BE%E7%9A%84%E6%94%B9%E9%80%A0%E7%A9%B6%E7%AB%9F%E4%BD%93%E7%8E%B0%E5%9C%A8%E4%BB%80%E4%B9%88%E6%96%B9%E9%9D%A2%EF%BC%9F%E4%B8%BA%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F%E6%AD%A5%E9%AA%A4%E5%8F%88%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%EF%BC%9F">对于乳企来说，供应链就是生命线，供应链的协同，是涉及到各个环节。那么蒙牛的数字化转型，对于供应链的改造究竟体现在什么方面？为了什么？步骤又是什么样子？ <a class="heading-anchor-permalink" href="#%E5%AF%B9%E4%BA%8E%E4%B9%B3%E4%BC%81%E6%9D%A5%E8%AF%B4%EF%BC%8C%E4%BE%9B%E5%BA%94%E9%93%BE%E5%B0%B1%E6%98%AF%E7%94%9F%E5%91%BD%E7%BA%BF%EF%BC%8C%E4%BE%9B%E5%BA%94%E9%93%BE%E7%9A%84%E5%8D%8F%E5%90%8C%EF%BC%8C%E6%98%AF%E6%B6%89%E5%8F%8A%E5%88%B0%E5%90%84%E4%B8%AA%E7%8E%AF%E8%8A%82%E3%80%82%E9%82%A3%E4%B9%88%E8%92%99%E7%89%9B%E7%9A%84%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%EF%BC%8C%E5%AF%B9%E4%BA%8E%E4%BE%9B%E5%BA%94%E9%93%BE%E7%9A%84%E6%94%B9%E9%80%A0%E7%A9%B6%E7%AB%9F%E4%BD%93%E7%8E%B0%E5%9C%A8%E4%BB%80%E4%B9%88%E6%96%B9%E9%9D%A2%EF%BC%9F%E4%B8%BA%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F%E6%AD%A5%E9%AA%A4%E5%8F%88%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%EF%BC%9F">#</a></h2>
+<p>针对供应链，我们的主要目标是降本增效。如何更快地将产品送达到消费者手中，以及从生产的角度，如何高效生产。</p>
+<p>蒙牛智慧供应链主要体现在三个方面：</p>
+<p><img src="./img/v5.jpeg" alt="v5"></p>
+<p>第一个就是打通，以前的供应链就是各自做各自的事情，低温的做低温，常温的做常温。现在将供应链做统一的拉通。</p>
+<p>第二个是透明，透明不仅是供应链的透明，更是全链路的透明。蒙牛提出了一个从牧场到餐桌的一个全链路透明打通的思路，用我们的话说，就是“from grass to glass”，从牧场到餐桌，形成一个全面透明的全链路打通。</p>
+<p>第三个是可视，全链路供应链中的每一个环节都很容易从管理端去直观看清。可以看到产品生产的位置，流程。特别是智能生产的部分，因为乳制品有个特点是保质期短。那么在这个里面，我们就要借助智能的AI设备，实现部分作业无人化；借助OT与IT融合，实现数据采集的无人化；借助流程、数据和算法，实现作业调度自动化，通过智能奶源调配，做智能的预测，去形成蒙牛的这种供应链体系。预测包括消费预测，有个项目就是针对门店的销量预测，通过销售预测实现智能补调，从而实现智能的调拨和销售计划。通过智能的销售计划，反推到工厂的生产，反推到牧场如何去供奶，这是一个全链路打通的过程。</p>
+<p>供应链的全链路数据采集，透明化，可视化是蒙牛在整个数字化转型过程中持续追求的。</p>
+<p>过程中也发现了很多问题，包括部分老旧系统数据不能打通，不透明。蒙牛针对性的对一些产品做了改造，按照业务的需求感知、反馈数据，通过 API 与中台对接，形成数据的融合。</p>
+<p>奶源这块蒙牛有一个智慧牧场的项目。智慧牧场的第一步是做了精细化数采，通过脖环、耳标可精确到每只牛，按照牛的生活习惯去管理。</p>
+<p>蒙牛现在有多个智慧牧场，通过数据的融合和打通实现牧场的智慧化管理。</p>
+<p>智慧牧场的数据作为智慧工厂的前置数据为智能工厂提供了重要数据源。不同的智能工厂的智能程度也不一样。比如新建的灯塔工厂就是全智能。其他老旧工厂，也在分步改造中。</p>
+<p>有了智能工厂后，我们通过我们的销售预测，去对计划调度进行一个智能的管理，形成智能计划调度体系。</p>
+<p>然而在过程中，也有很多不确定性。在调度计划的过程中，有很多的突发情况。</p>
+<p>从管理角度，要设计智能、柔性的管理体系。比如调整，当遇到突发的黑天鹅事件，某地突然出现了疫情，那我们的供应链就要做出针对性的适配。黑天鹅事件是机器难以预测到。</p>
+<h2 id="%E5%8F%AF%E4%BB%A5%E8%AE%B2%E4%B8%8B%EF%BC%8C%E9%92%88%E5%AF%B9%E6%9F%90%E5%9C%B0%E5%87%BA%E7%8E%B0%E7%96%AB%E6%83%85%EF%BC%8C%E8%92%99%E7%89%9B%E6%98%AF%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9F%94%E6%80%A7%E3%80%81%E6%99%BA%E8%83%BD%E7%9A%84%E4%BE%9B%E5%BA%94%E9%93%BE%E6%94%AF%E6%8C%81%E5%BD%93%E5%9C%B0%E7%9A%84%E5%A5%B6%E6%BA%90%E4%BE%9B%E5%BA%94%E7%9A%84%E5%91%A2">可以讲下，针对某地出现疫情，蒙牛是如何通过柔性、智能的供应链支持当地的奶源供应的呢 <a class="heading-anchor-permalink" href="#%E5%8F%AF%E4%BB%A5%E8%AE%B2%E4%B8%8B%EF%BC%8C%E9%92%88%E5%AF%B9%E6%9F%90%E5%9C%B0%E5%87%BA%E7%8E%B0%E7%96%AB%E6%83%85%EF%BC%8C%E8%92%99%E7%89%9B%E6%98%AF%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9F%94%E6%80%A7%E3%80%81%E6%99%BA%E8%83%BD%E7%9A%84%E4%BE%9B%E5%BA%94%E9%93%BE%E6%94%AF%E6%8C%81%E5%BD%93%E5%9C%B0%E7%9A%84%E5%A5%B6%E6%BA%90%E4%BE%9B%E5%BA%94%E7%9A%84%E5%91%A2">#</a></h2>
+<p>蒙牛通过数字化转型建立了统一的订单中心、库存中心，这样替换原有供应链时，我们通过蒙牛各个这样的中心能很好的切换到一个新供应链体系，这就是柔性供应链的一部分。</p>
+<p><img src="./img/v6.jpeg" alt="v6"></p>
+<h2 id="%E6%B6%88%E8%B4%B9%E8%80%85%E5%9C%A8%E7%BA%BF%E5%8F%88%E6%98%AF%E6%8C%87%E4%BB%80%E4%B9%88%E5%91%A2%EF%BC%9F%E4%B8%80%E7%9B%B4%E4%BB%A5%E6%9D%A5%EF%BC%8C%E8%92%99%E7%89%9B%E9%83%BD%E6%B2%A1%E6%9C%89%E7%9B%B4%E6%8E%A5-toc-%E7%9A%84%E5%9C%BA%E6%99%AF%EF%BC%8C%E5%B9%B6%E4%B8%8D%E6%98%AF%E7%89%B9%E5%88%AB%E5%A4%9A%EF%BC%8C%E6%9B%B4%E5%A4%9A%E7%9A%84%E6%98%AF%E9%80%9A%E8%BF%87%E5%90%84%E7%A7%8D%E6%B8%A0%E9%81%93%EF%BC%8C%E5%90%84%E7%A7%8D%E5%95%86%E5%BA%97%E6%9D%A5%E8%BE%BE%E5%88%B0%E6%9C%80%E7%BB%88%E5%AE%A2%E6%88%B7%E7%9A%84%E3%80%82%E8%92%99%E7%89%9B%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E6%9C%AA%E6%9D%A5%E5%B0%86%E4%BC%9A%E6%9B%B4%E5%A4%9A%E7%9A%84%E5%83%8F%E8%BF%99%E7%A7%8D-dtc%EF%BC%88direct-to-customer%EF%BC%89%E8%BF%99%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%9D%A5%E8%BD%AC%E5%8F%98%EF%BC%9F">消费者在线又是指什么呢？一直以来，蒙牛都没有直接 toC 的场景，并不是特别多，更多的是通过各种渠道，各种商店来达到最终客户的。蒙牛商业模式未来将会更多的像这种 dtc（direct to customer）这种方式来转变？ <a class="heading-anchor-permalink" href="#%E6%B6%88%E8%B4%B9%E8%80%85%E5%9C%A8%E7%BA%BF%E5%8F%88%E6%98%AF%E6%8C%87%E4%BB%80%E4%B9%88%E5%91%A2%EF%BC%9F%E4%B8%80%E7%9B%B4%E4%BB%A5%E6%9D%A5%EF%BC%8C%E8%92%99%E7%89%9B%E9%83%BD%E6%B2%A1%E6%9C%89%E7%9B%B4%E6%8E%A5-toc-%E7%9A%84%E5%9C%BA%E6%99%AF%EF%BC%8C%E5%B9%B6%E4%B8%8D%E6%98%AF%E7%89%B9%E5%88%AB%E5%A4%9A%EF%BC%8C%E6%9B%B4%E5%A4%9A%E7%9A%84%E6%98%AF%E9%80%9A%E8%BF%87%E5%90%84%E7%A7%8D%E6%B8%A0%E9%81%93%EF%BC%8C%E5%90%84%E7%A7%8D%E5%95%86%E5%BA%97%E6%9D%A5%E8%BE%BE%E5%88%B0%E6%9C%80%E7%BB%88%E5%AE%A2%E6%88%B7%E7%9A%84%E3%80%82%E8%92%99%E7%89%9B%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E6%9C%AA%E6%9D%A5%E5%B0%86%E4%BC%9A%E6%9B%B4%E5%A4%9A%E7%9A%84%E5%83%8F%E8%BF%99%E7%A7%8D-dtc%EF%BC%88direct-to-customer%EF%BC%89%E8%BF%99%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%9D%A5%E8%BD%AC%E5%8F%98%EF%BC%9F">#</a></h2>
+<p>蒙牛转型的过程中，我们提出了一个口号：“以消费者为天，以数据为地”。消费者在线是数字化转型过程中一个关键点。蒙牛的销售模式是以渠道为主，直接 toC 的，只占到蒙牛整体销量的 6%-7%，电商部分是蒙牛自己的。</p>
+<p>在不能直接触达客户的场景里，我们通过第三方数据、渠道的数据，再结合蒙牛自身电商的数据以及我们 toB toC 的数据，做数据融合。</p>
+<p>但这里有个问题是数据的质量参差不齐，自有电商的数据质量很高，渠道，尤其是卖场的数据质量不高，字段缺失严重。</p>
+<p>如何有效利用这样的数据，就成为了关键的问题。蒙牛建立了自有的 CDP和 DMP，做好采集，拉通，尝试融合数据质量高和数据质量低的数据，互相补充。</p>
+<p>另外，蒙牛建立了完善的标签体系以及标签中心。形成了蒙牛的标签平台，通过标签平台，能够将消费者的数据进一步清洗，形成蒙牛的消费者数据资产。</p>
+<p><img src="./img/v7.jpeg" alt="v7"></p>
+<p>最开始采集的不是资产，只是数据，只有经过标签体系加工、治理、融合，才能形成蒙牛的数据资产。
+蒙牛对于这些消费者数据加以利用，如投放场景，可以从粗犷的投放进化到精细化投放，形成数字化精准投放。根据消费者的标签，不同的人在不同时间，不同地点，不同场景看到的投放内容有所不同，这样大大提升了投放效果。</p>
+<p>此外在运营方面也有些场景，如消费者拉新。蒙牛的消费者拉新是创新方式的。比如“电子奶卡”，“电子奶卡”可以作为礼品送给你的亲朋好友，在 消费奶卡的过程中，就自动拉新了一个新的客户。通过这种方式拉新，用户并不反感，这就是蒙牛创新的一种拉新方式。</p>
+<h2 id="%E2%80%9C%E7%AE%A1%E7%90%86%E5%9C%A8%E7%BA%BF%E2%80%9D%E5%AF%B9%E8%92%99%E7%89%9B%E6%9D%A5%E8%AF%B4%E6%84%8F%E5%91%B3%E7%9D%80%E4%BB%80%E4%B9%88%EF%BC%9F">“管理在线”对蒙牛来说意味着什么？ <a class="heading-anchor-permalink" href="#%E2%80%9C%E7%AE%A1%E7%90%86%E5%9C%A8%E7%BA%BF%E2%80%9D%E5%AF%B9%E8%92%99%E7%89%9B%E6%9D%A5%E8%AF%B4%E6%84%8F%E5%91%B3%E7%9D%80%E4%BB%80%E4%B9%88%EF%BC%9F">#</a></h2>
+<p>“管理在线”首先是能够持续获取有用的、及时的管理数据，在这个过程中也触发了组织的变革。</p>
+<p>在信息采集的过程中，需要组织、流程能适应这种变革。将原有的“金字塔型”组织，调整为“钻石型”组织。“钻石型”组织是以最终的场景为目的，是一个钻石的点，其他所有的点都是服务这个场景，并且可以做直接的数据采集的。</p>
+<p>蒙牛有一个项目叫“智牛”，智牛将蒙牛所有管理的数据都进行了一个融合，所有的管理都可以通过智牛去做自动数据采集。</p>
+<p>管理又分为执行层、决策层。</p>
+<p>在这个过程中，针对管理，我们又提出了数据为管理赋能的新的模式，比如窜货场景，可以给管理者提供一个数据判断的依据。</p>
+<p>另外还可以通过数据和系统，向管理要效益。做排名，做排序。在降本增效的同时，大家的劲儿能往一处使，并且让大家知道，转型做好了，能获得什么。同时也是管理信息的拉通透明。</p>
+<h2 id="%E6%84%9F%E8%B0%A2%E5%88%98%E6%80%BB%E4%BB%8B%E7%BB%8D%E2%80%9C%E5%9B%9B%E4%B8%AA%E5%9C%A8%E7%BA%BF%E2%80%9D%EF%BC%8C%E9%82%A3%E4%B9%88%E8%BF%99%E5%9B%9B%E4%B8%AA%E5%9C%A8%E7%BA%BF%E6%98%AF%E9%9D%A0%E7%9D%80%E8%92%99%E7%89%9B%E5%86%85%E9%83%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E5%9B%A2%E9%98%9F%EF%BC%8C%E9%80%9A%E8%BF%87%E5%8F%8C%E4%B8%AD%E5%8F%B0%E7%9A%84%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E6%9D%A5%E5%AE%9E%E7%8E%B0%E7%9A%84%EF%BC%8C%E8%83%BD%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%B8%8B%E5%90%97%EF%BC%9F">感谢刘总介绍“四个在线”，那么这四个在线是靠着蒙牛内部的技术团队，通过双中台的技术架构来实现的，能简单介绍下吗？ <a class="heading-anchor-permalink" href="#%E6%84%9F%E8%B0%A2%E5%88%98%E6%80%BB%E4%BB%8B%E7%BB%8D%E2%80%9C%E5%9B%9B%E4%B8%AA%E5%9C%A8%E7%BA%BF%E2%80%9D%EF%BC%8C%E9%82%A3%E4%B9%88%E8%BF%99%E5%9B%9B%E4%B8%AA%E5%9C%A8%E7%BA%BF%E6%98%AF%E9%9D%A0%E7%9D%80%E8%92%99%E7%89%9B%E5%86%85%E9%83%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E5%9B%A2%E9%98%9F%EF%BC%8C%E9%80%9A%E8%BF%87%E5%8F%8C%E4%B8%AD%E5%8F%B0%E7%9A%84%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E6%9D%A5%E5%AE%9E%E7%8E%B0%E7%9A%84%EF%BC%8C%E8%83%BD%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%B8%8B%E5%90%97%EF%BC%9F">#</a></h2>
+<p>中台是一个良药还是一个苦药，是要根据企业现有的状况。中台其实不是一个平台，是一套方法论开始，到组织变革，到流程变革，建立完善的体系后，才是平台。</p>
+<p><img src="./img/v8.jpeg" alt="v8"></p>
+<p>我们说到前台和后台，针对前中后三台，用三个S分别可以定义他们的特点，前台是接触到业务的部分，用 SMART 敏捷原则。后台要建立一个足够 STRONG 、稳定的后台。而中台是在两者之间进行连接，要解决 SMART 到 STRONG 的矛盾，中台使用 STANDARD 标准建立各种标准，形成我们统一的能力复用。</p>
+<p>蒙牛最开始也没有中台，经过盘点，蒙牛在役的业务系统有 98 个。业务系统独立、不打通的话，业务间没有联系，要联系起来就要改造原有系统，做不到。</p>
+<p>因此我们在业务系统之上抽象了业务中台，形成共性的一些中心。比如订单中心、库存中心、交易中心、财务中心等，提供了丰富的 api，让各个系统可以很好的对接，让后台能直接通过中台去对接其他系统。一个后台不需要对接98个系统，那就非常麻烦了。</p>
+<p>讲到数据中台，是在业务中台建立到一定程度后，需要数据做融合拉通。我们需要一个数据中台既可以管理数据，同时又能对外提供服务。</p>
+<p>数据中台最核心的功能就是要建立统一数据采集平台，这就相当于建立数据集成中心，进行数据统一的管理。平台本身进行数据分层分域管理，蒙牛数据中台分了三层：垂直数据层接入了原始数据不做修改，公共数据层按数据域进行数据融合治理，萃取数据层根据业务需要形成可发布的数据资产，以形成可编排的应用。</p>
+<p>业务中台可以为数据中台提供数据，消费数据，业务中台提供原始数据的同时消费拉通加工后的数据资产。数据中台把业务中台和其他途径获取的数据进行统一融合形成数据资产，业务中台、数据中台一体化，形成了有机的互动。</p>
+<h2 id="%E8%92%99%E7%89%9B%E7%9A%84%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%E4%BB%8E%E5%93%AA%E9%87%8C%E5%BC%80%E5%A7%8B%E7%9A%84%EF%BC%9F%E5%8F%96%E5%BE%97%E4%BA%86%E5%93%AA%E4%BA%9B%E6%9C%89%E7%9B%8A%E7%9A%84%E6%88%90%E6%9E%9C%EF%BC%9F%E5%AF%B9%E8%92%99%E7%89%9B%E7%9A%84%E4%B8%9A%E5%8A%A1%E4%BA%A7%E7%94%9F%E5%93%AA%E4%BA%9B%E8%BD%AC%E5%8F%98%EF%BC%9F">蒙牛的数字化转型从哪里开始的？取得了哪些有益的成果？对蒙牛的业务产生哪些转变？ <a class="heading-anchor-permalink" href="#%E8%92%99%E7%89%9B%E7%9A%84%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%E4%BB%8E%E5%93%AA%E9%87%8C%E5%BC%80%E5%A7%8B%E7%9A%84%EF%BC%9F%E5%8F%96%E5%BE%97%E4%BA%86%E5%93%AA%E4%BA%9B%E6%9C%89%E7%9B%8A%E7%9A%84%E6%88%90%E6%9E%9C%EF%BC%9F%E5%AF%B9%E8%92%99%E7%89%9B%E7%9A%84%E4%B8%9A%E5%8A%A1%E4%BA%A7%E7%94%9F%E5%93%AA%E4%BA%9B%E8%BD%AC%E5%8F%98%EF%BC%9F">#</a></h2>
+<p>第一个成果，蒙牛数字化转型最大的成果就是业务和技术间形成了良性的融合。从前技术只是被动的响应业务，现在技术和业务是统一的一体。</p>
+<p>第二个成果，形成了能力的复用。蒙牛在降本增效的过程中形成了各个中心，包括前面提到的订单中心、库存中心、会员中心等，能积极的去响应业务。</p>
+<p>举个例子，我们有个业务单元，要上线一个小程序中心，通过我们的业务中台形成中心能力，只用一周的时间就完成了所有功能的发布上线。</p>
+<p>第三类成果，就是形成了很多的应用。比如智慧牧场，不仅有数据的智能化采集，更有牧场间的数据融合。</p>
+<p>可以智能预测奶牛的乳量，发情期等。</p>
+<p>智慧工厂。灯塔工厂叫黑灯工厂，可以没有灯，通过全智能的传感器去进行智能管理、评判。新建设的工厂引入了数字孪生，同时有一个虚拟的工厂和一个实际的工厂。</p>
+<p>工厂从奶源的检测开始，到最后的打包封装，全都是智能，自动，无人化的。</p>
+<p>面向消费者的成果就更多，比如通过消费者标签做消费者全生命周期运营，做智能预测、补调，智能生产，智能奶源资源平衡。门店销量预测准确率达到 70+%，大量降低成本，减少库存，增加周转。</p>
+<h2 id="%E6%9C%89%E5%93%AA%E4%BA%9B%E7%BB%8F%E9%AA%8C%E6%98%AF%E5%8F%AF%E4%BB%A5%E7%BB%99%E5%85%B6%E4%BB%96%E4%BC%81%E4%B8%9A%E5%8F%82%E8%80%83%E7%9A%84%E5%90%97%EF%BC%9F">有哪些经验是可以给其他企业参考的吗？ <a class="heading-anchor-permalink" href="#%E6%9C%89%E5%93%AA%E4%BA%9B%E7%BB%8F%E9%AA%8C%E6%98%AF%E5%8F%AF%E4%BB%A5%E7%BB%99%E5%85%B6%E4%BB%96%E4%BC%81%E4%B8%9A%E5%8F%82%E8%80%83%E7%9A%84%E5%90%97%EF%BC%9F">#</a></h2>
+<p>这里谈不上经验，我可以谈谈蒙牛的做法，数字化转型首先是不要人云亦云，一定要明白企业进行数字化转型的目的是什么，是有更新的商业模式，还是为降本增效，更好的销量。有目的后，转型才有落脚点。</p>
+<p>1.不要只做技术的数字化转型，而是让技术赋能业务的转型，这才是真正的数字化转型。</p>
+<p>2.蒙牛数字化转型有一个提法叫做“先开枪后瞄准”，转型过程中有时候看不清，但我们还是尝试做一下，开枪偏了，下一次会瞄得更准。数字化转型需要迭代。</p>
+<p>3.拥抱开源，开放场景，与技术领域供应商共创，同时在前进过程中包容挫折，不断迭代。</p>
+<p>4.数字化转型是一个长期的过程，马上看到收益不现实。需要管理层从战略层面对数字化转型进行大力支持。转型的过程一定要立足自己，考虑长远，不断迭代。祝大家都能找到最适合自己企业转型的路径。</p>
+<p>有关星策智能化转型开源社区的更多详情，可点击「阅读原文」访问社区官网（<a href="http://startogether.ai/">http://startogether.ai/</a>）。</p>
+
+      </article>
+    </div>
+    <script>
+      // Load contents.json if you need it
+    </script>
+    <script>
+      // FROM http://purecss.io/js/ui.js
+      (function(window, document) {
+        var layout = document.getElementById("layout"),
+          menu = document.getElementById("menu"),
+          menuLink = document.getElementById("menuLink");
+
+        function toggleClass(element, className) {
+          var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+          for (; i < length; i++) {
+            if (classes[i] === className) {
+              classes.splice(i, 1);
+              break;
+            }
+          }
+          // The className is not found
+          if (length === classes.length) {
+            classes.push(className);
+          }
+
+          element.className = classes.join(" ");
+        }
+
+        menuLink.onclick = function(e) {
+          var active = "active";
+
+          e.preventDefault();
+          toggleClass(layout, active);
+          toggleClass(menu, active);
+          toggleClass(menuLink, active);
+        };
+      })(this, this.document);
+    </script>
+  </body>
+</html>

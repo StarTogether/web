@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-rendering: optimizeLegibility;
+        line-height: 1;
+        margin-top: 0;
+        color: #222;
+      }
+
+      blockquote + figcaption cite {
+        display: block;
+        font-size: inherit;
+        text-align: right;
+      }
+
+      body {
+        word-wrap: break-word;
+      }
+
+      pre code {
+        word-wrap: normal;
+      }
+
+      body {
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        color: #444;
+      }
+
+      h1 {
+        font-size: 2em;
+        /* 2*16 = 32 */
+      }
+
+      h2 {
+        font-size: 1.5em;
+        /* 1.5*16 = 24 */
+      }
+
+      h3 {
+        font-size: 1.17em;
+        /* 1.17*16 = 18.72 */
+      }
+
+      h4 {
+        font-size: 1em;
+        /* 1*16 = 16 */
+      }
+
+      h5 {
+        font-size: 0.83em;
+        /* 0.83*16 = 13.28 */
+      }
+
+      h6 {
+        font-size: 0.75em;
+        /* 0.75*16 = 12 */
+      }
+
+      h1 {
+        margin: 2.42424rem 0 1.454544rem;
+      }
+
+      h2 {
+        margin: 2.0202rem 0 1.21212rem;
+      }
+
+      h3 {
+        margin: 1.61616rem 0 1rem;
+      }
+
+      h4 {
+        margin: 1.21212rem 0 1;
+      }
+
+      h5 {
+        margin: 0.80808rem 0;
+      }
+
+      h6 {
+        margin: 0.70707rem 0;
+      }
+
+      p {
+        margin: auto auto 1.5rem;
+      }
+
+      small {
+        font-size: 65%;
+      }
+
+      input,
+      abbr,
+      acronym,
+      blockquote,
+      code,
+      kbd,
+      q,
+      samp,
+      var {
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre {
+        white-space: pre;
+      }
+
+      pre code {
+        white-space: -moz-pre-wrap;
+        white-space: pre-wrap;
+      }
+
+      code {
+        white-space: pre;
+        font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+      }
+
+      abbr {
+        -webkit-font-variant: small-caps;
+        -moz-font-variant: small-caps;
+        -ms-font-variant: small-caps;
+        font-variant: small-caps;
+        font-weight: 600;
+        text-transform: lowercase;
+        color: gray;
+      }
+
+      abbr[title]:hover {
+        cursor: help;
+      }
+
+      /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        color: #444;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: auto;
+      }
+
+      code,
+      pre {
+        background-color: #f5f5f5;
+        color: #444;
+        border-radius: 2px;
+        text-shadow: 0px 1px 0px white;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      }
+
+      pre code {
+        border: none;
+        box-shadow: none;
+      }
+
+      pre {
+        padding: 0.5em;
+      }
+
+      code {
+        display: inline-block;
+        padding: 0 0.5em;
+        line-height: 1.4;
+        font-size: 0.9em;
+      }
+
+      table {
+        border-spacing: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      table th,
+      table td {
+        padding: 0.3em 0.7em;
+      }
+
+      table th {
+        background-color: #f4f4f4;
+        border-bottom: 2px solid #444;
+      }
+
+      table td {
+        border: 1px solid #f5f5f5;
+      }
+
+      /* Add transition to containers so they can push in and out. */
+
+      #layout,
+      #menu,
+      .menu-link {
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -ms-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+      }
+
+      /* This is the parent `<div>` that contains the menu and the content area. */
+
+      #layout {
+        position: relative;
+        padding-left: 0;
+      }
+
+      #layout.active #menu {
+        left: 250px;
+        width: 250px;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+
+      /* The content `<div>` is where all your content goes. */
+
+      .content {
+        margin: 50px auto;
+        padding: 0 2em;
+        max-width: 80ex;
+        line-height: 1.6em;
+      }
+
+      /*
+      The `#menu` `<div>` is the parent `<div>` that contains the menu that
+      appears on the left side of the page.
+      */
+
+      #menu {
+        margin-left: -250px;
+        /* "#menu" width */
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        /* so the menu or its navicon stays above all content */
+        background: #f4f4f4;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.9em;
+      }
+
+      @media print {
+        #menu,
+        .menu-link {
+          display: none !important;
+        }
+      }
+
+      a,
+      a * {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      a:visited {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      /* All anchors inside the menu should be styled like this. */
+
+      #menu a {
+        display: block;
+        padding: 0.5em 0.5em;
+      }
+
+      #menu a:first-letter {
+        text-transform: capitalize;
+      }
+
+      #menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 1em 0.5em;
+      }
+
+      #menu ul ul {
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        border-left: 4px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Change color of the anchor links on hover/focus. */
+
+      #menu li a:hover,
+      #menu li a:focus {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      /* This styles the selected menu item `<li>`. */
+
+      #menu li a.active {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      /* This styles a link within a selected menu item `<li>`. */
+
+      #menu li a.active {
+        color: #222;
+      }
+
+      /* This styles the menu heading. */
+
+      #menu li.heading {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      #menu li.heading > * {
+        padding: 0.5em;
+        display: block;
+      }
+
+      #menu li.heading a {
+        color: #0c68af;
+      }
+
+      /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+      /*
+      `.menu-link` represents the responsive menu toggle that shows/hides on
+      small screens.
+      */
+
+      .menu-link {
+        position: fixed;
+        display: block;
+        /* show this only on small screens */
+        top: 0;
+        left: 0;
+        /* "#menu width" */
+        font-size: 10px;
+        /* change this value to increase/decrease button size */
+        z-index: 10;
+        width: 2em;
+        height: auto;
+        padding: 1.6em 1.2em;
+        border-radius: 0 2px 2px 0;
+      }
+
+      .menu-link:hover {
+        background: #f4f4f4;
+      }
+
+      .menu-link span {
+        position: relative;
+        display: block;
+      }
+
+      .menu-link span,
+      .menu-link span:before,
+      .menu-link span:after {
+        background-color: #555;
+        width: 100%;
+        height: 0.2em;
+        border-radius: 1em;
+      }
+
+      .menu-link span:before,
+      .menu-link span:after {
+        position: absolute;
+        margin-top: -0.6em;
+        content: " ";
+      }
+
+      .menu-link span:after {
+        margin-top: 0.6em;
+      }
+
+      /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+      @media (min-width: 48em) {
+        .header,
+        .content {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+
+        #layout {
+          padding-left: 250px;
+          /* left col width "#menu" */
+          left: 0;
+        }
+        #menu {
+          left: 250px;
+        }
+
+        .menu-link {
+          position: fixed;
+          left: 250px;
+          display: none;
+        }
+
+        #layout.active .menu-link {
+          left: 250px;
+        }
+      }
+
+      @media (max-width: 48em) {
+        /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+         * Make the window small.
+         * Tap the menu to trigger the active state.
+         * Make the window large again.
+         */
+        #layout.active {
+          position: relative;
+          left: 250px;
+        }
+      }
+
+      /* Heading anchors and permalinks */
+      h1[id],
+      h2[id],
+      h3[id],
+      h4[id],
+      h5[id],
+      h6[id] {
+        position: relative;
+      }
+      .heading-anchor-permalink {
+        /* Position the permalink to the left of the title */
+        position: absolute;
+        right: 100%;
+        /* Add some spacing as padding to not lose the hover */
+        padding-right: 0.6rem;
+        /* Make it only visible on heading hover, see below */
+        opacity: 0;
+      }
+      h1[id]:hover .heading-anchor-permalink,
+      h2[id]:hover .heading-anchor-permalink,
+      h3[id]:hover .heading-anchor-permalink,
+      h4[id]:hover .heading-anchor-permalink,
+      h5[id]:hover .heading-anchor-permalink,
+      h6[id]:hover .heading-anchor-permalink {
+        opacity: 0.5;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div id="layout">
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+      <nav id="menu">
+        <ul>
+<li class="heading"><a class="" href="../ai-summit/index.html">ai summit</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../csdn-join/index.html">csdn join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../dataops-review/index.html">dataops review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../developer/index.html">developer</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../devops-review/index.html">devops review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../devops_mlops/index.html">devops mlops</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../dian-join/index.html">dian join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../features-store-v3/index.html">features store v3</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../fs-v4-review/index.html">fs v4 review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../lushouqun-confirm/index.html">lushouqun confirm</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mengniu-join/index.html">mengniu join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mengniu/index.html">mengniu</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../mlops-commitee/index.html">mlops commitee</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../shenxin-join/index.html">shenxin join</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../sql-boy/index.html">sql boy</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../talk-about-transition/index.html">talk about transition</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="active" href="index.html">transition review</a></li>
+<ul>
+
+</ul>
+<li class="heading"><a class="" href="../zte-join/index.html">zte join</a></li>
+<ul>
+
+</ul>
+</ul>
+      </nav>
+      <article id="main" class="content">
+        <h1 id="%E4%BC%81%E4%B8%9A%E6%99%BA%E8%83%BD%E5%8C%96%E8%BD%AC%E5%9E%8Bmeetup%E5%9B%9E%E9%A1%BE">企业智能化转型meetup回顾 <a class="heading-anchor-permalink" href="#%E4%BC%81%E4%B8%9A%E6%99%BA%E8%83%BD%E5%8C%96%E8%BD%AC%E5%9E%8Bmeetup%E5%9B%9E%E9%A1%BE">#</a></h1>
+<h2 id="%E5%BC%80%E6%BA%90bi-%26-ai%E5%8A%A9%E5%8A%9B%E4%BC%81%E4%B8%9A%E8%BD%AC%E5%9E%8B%E4%B9%8B%E6%97%85%E4%B8%89%E9%98%B6%E6%AE%B5">开源BI &amp; AI助力企业转型之旅三阶段 <a class="heading-anchor-permalink" href="#%E5%BC%80%E6%BA%90bi-%26-ai%E5%8A%A9%E5%8A%9B%E4%BC%81%E4%B8%9A%E8%BD%AC%E5%9E%8B%E4%B9%8B%E6%97%85%E4%B8%89%E9%98%B6%E6%AE%B5">#</a></h2>
+<p>2022-06-01 15:57:00 星策社区</p>
+<p>2022年5月22日，星策社区携手微众银行、第四范式、中兴通讯等共建单位的技术专家们，共同召开社区首届“企业智能化转型meetup”。本次活动向大家介绍了如何利用开源BI &amp; AI技术，帮助企业完成信息化—数字化—智能化转型三阶段，搭建自己的BI、AI平台，并提升AI模型性能，降低企业成本。</p>
+<p>🌟本期 Meetup 嘉宾分享PPT获取方式：<em><strong>关注公众号「星策开源」并回复「0522」</strong></em></p>
+<h2 id="%E7%B2%BE%E5%BD%A9%E5%86%85%E5%AE%B9%E5%9B%9E%E9%A1%BE">精彩内容回顾 <a class="heading-anchor-permalink" href="#%E7%B2%BE%E5%BD%A9%E5%86%85%E5%AE%B9%E5%9B%9E%E9%A1%BE">#</a></h2>
+<h3 id="part1%EF%BC%9A%E5%BC%80%E5%9C%BA%2B%E4%BC%81%E4%B8%9A%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%E6%97%85%E7%A8%8B%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5%E2%80%94%E2%80%94%E8%B0%AD%E4%B8%AD%E6%84%8F">Part1：开场+企业数字化转型旅程的三个阶段——谭中意 <a class="heading-anchor-permalink" href="#part1%EF%BC%9A%E5%BC%80%E5%9C%BA%2B%E4%BC%81%E4%B8%9A%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%E6%97%85%E7%A8%8B%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5%E2%80%94%E2%80%94%E8%B0%AD%E4%B8%AD%E6%84%8F">#</a></h3>
+<p><img src="./img/meetup-v1.png" alt="v1"></p>
+<p>企业数字化转型的目标是保持企业的持续增长，结果是要把企业转变成为能根据市场变化而不断进化和快速迭代的企业，这个转变的过程称之为企业数字化转型。现如今，“转型”已经变得非常紧急和重要，他已经不再是选不选和干不干的问题，而是干得快和慢、好不好的问题，是决定未来企业核心竞争力的问题。其中，智能化转型是企业数字化转型的高级阶段。</p>
+<p><img src="./img/meetup-v2.png" alt="v2"></p>
+<h4 id="%E4%BB%80%E4%B9%88%E6%98%AF%E4%BC%81%E4%B8%9A%E6%99%BA%E8%83%BD%E5%8C%96%E8%BD%AC%E5%9E%8B%EF%BC%9F">什么是企业智能化转型？ <a class="heading-anchor-permalink" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BC%81%E4%B8%9A%E6%99%BA%E8%83%BD%E5%8C%96%E8%BD%AC%E5%9E%8B%EF%BC%9F">#</a></h4>
+<p>如上图所示，转型的目标是为了业务增长。从外部视角来看，企业进行智能化转型之后，用户体验、核心运营都将提升，商业模式也会进行修改。从内部企业CEO的视角来看，企业的业务感知变得数字化，业务执行也变得数字化，而最关键的是企业经营决策也要变得数字化和智能化，另外还有企业的上下游生态也需要随之变得数字化。这些数字化带来的结果就是转型，让企业转变成为能根据变化而不断进行变化、进化和快速迭代的企业，这个过程就是企业的数字化转型。</p>
+<p><img src="./img/meetup-v3.png" alt="v3"></p>
+<h4 id="%E4%BC%81%E4%B8%9A%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%E7%9A%84%E6%97%85%E7%A8%8B%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5">企业数字化转型的旅程的三个阶段 <a class="heading-anchor-permalink" href="#%E4%BC%81%E4%B8%9A%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%E7%9A%84%E6%97%85%E7%A8%8B%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5">#</a></h4>
+<p>一般来说，企业数字化转型的旅程分为三个阶段，即信息化、数字化、智能化。分开来看，第一阶段信息化，就是传统的办公电子化，财务电子化，这个阶段的特征是使用大量的OA和财务软件。第二个阶段数字化，它的特征是业务的线上化，运营的数字化，它采用了大量的数据平台和在线平台。第三阶就是智能化，这个阶段企业的业务会智能化，运营智能化，企业会大量使用各种AI平台。</p>
+<p>而通常情况下，当企业完成了信息化，下一步将开始搭建BI系统，将要对接各种数据源，形成各种可视化报表。其中，如何快速搭建一个BI系统，可以参考使用星策社区开源项目Data Sphere Studio。之后，当企业建完BI系统开始搭建AI时，将面临AI落地过程的挑战与难题，如何做到AI的多、快、好、省的开发和上线？可以参考使用星策社区开项目OpenMLDB。最后，在AI上线后，面临着多种机器资源、AI模型，想要提升其性能、降低成本，则可参考使用星策社区开源项目Adlik，让AI服务更省、更快、更优，以此加速企业智能化转型。</p>
+<h3 id="part2%EF%BC%9A%E4%BC%81%E4%B8%9A%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%EF%BC%8C%E4%BB%8E%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%A7%8B%E2%80%94%E2%80%94andy">Part2：企业数字化转型，从大数据平台开始——Andy <a class="heading-anchor-permalink" href="#part2%EF%BC%9A%E4%BC%81%E4%B8%9A%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%EF%BC%8C%E4%BB%8E%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%A7%8B%E2%80%94%E2%80%94andy">#</a></h3>
+<p><img src="./img/meetup-v4.png" alt="v4"></p>
+<p>微众银行作为数字银行，所提供的服务都是在互联网上进行的。因此，作为数字银行，微众的数字化思路尤为值得参考。从几年前，国家就一直在追求企业怎么去做数字化，怎么去做数字经济，尤其是在十四五规划以来的话，数字经济已经是非常明确的发展主要目标。而今天，怎么去推进整个产业的数字化转型，怎么去做数字化，用一个比较通用的模型，5W1H来思考几个话题，到底企业的数字化转型是什么？为什么要数字化，现在我们在什么阶段？应该在什么场景去做？以及哪些企业？怎么去做？</p>
+<p><img src="./img/meetup-v5.png" alt="v5"></p>
+<ul>
+<li>
+<p>What：什么是数字化转型？
+数字化的转型主要就是用数字化技术与业务进行有效的整合，在与一些业务流程跟产品改造完毕之后，能够做到开源、降本、增效，甚至做到新的商业模式产生，这种数字化才算是成功的。</p>
+</li>
+<li>
+<p>Why：为什么要做数字化？
+数字化转型最终目的是开源、降本、增效。开源就是开源节流的开源，需要关注怎么去创收，通过数字化的方式去触达更多的客户。降本，则需要关注怎么去使用新技术节约成本。增效，简单来说就是使用自动化的协同工具提升工作效率。</p>
+</li>
+<li>
+<p>When：什么阶段适合？
+不同企业的不同阶段都是有很大差异的，建议在主营业务稳定的时候，立即启动数字化转型的探索。</p>
+</li>
+<li>
+<p>Where：什么场景适合？
+一般来说，先从增量的业务开始做，因为这是一个探索和尝试的过程，一旦增量的业务比较稳定做好了，再迁移到核心业务。</p>
+</li>
+<li>
+<p>Who：哪些企业需要数字化？
+其实，所有的企业都需要做数字化，哪怕是中小微企业，甚至个人工商户，都可以通过使用数字化工具，大幅度提高企业的效率。</p>
+</li>
+<li>
+<p>How：怎么去做？
+从技术方面来说，需要选择适合的技术路线和合作伙伴。术业有专攻，目前市场上很多有成功经验的合作伙伴，企业需要挑选符合自己的合作伙伴，共建数字化系统。除了寻找合作伙伴以外，还需要投入人力物力进行学习。</p>
+</li>
+</ul>
+<p><img src="./img/meetup-v6.png" alt="v6"></p>
+<p>在转型过程中，无论无论各个企业怎么做转型，数据的处理都是非常重要的，大数据平台也成为了企业数字化转型的必要工具。在大数据行业中，已经存在了大量的大数据企业，能帮助企业转型。而目前看到很多一站式大数据平台，大多数厂商付费所提供的，像开源的一站式大数据平台在当前市场上是非常少的。微众作为一家数字银行，更加聚焦于一站式的开源大数据平台，将微众所用的大数据平台WeDataSphere开放出来，为整个行业开源提供了一站式、金融级、全连通、开源开放大数据平台套件。</p>
+<p><img src="./img/meetup-v7.png" alt="v7"></p>
+<p>上图是WeDataSphere的整体框架，底层运用的是外部的基础引擎，中间通过中间件linkis、DataShspis连接到最上层的各个应用，这些应用包括了几个方面，分别是数据的分析工厂、学习工厂，还有数据的治理工厂，可以满足了绝大多数的应用场景，以及最右侧的一些数据管理工厂。</p>
+<p>聚焦于图片左上角，DataSphere Studio是应用开发集成框架，它可以集成目前所有的组件，是一个管理框架。Scriptis支持脚本IDE开发环境，它支持Spark还有SQL等等主流的脚本。Visualis是可视化的工具，现在已经集成到DSS的门户里面了，可以通过拖拉的方式来实现可视化，目前它支持了很多种的图表、可视化的大屏、水印、数据质量校验等等的一些基础功能。接下来还有数据调度的Schedulis、数据交换Exchangis、流式计算应用开发管理Streamis、以及跨集群数据同步Transportis和数据模型开发管理MIDE等。这些组件最后整体形成了如今的大量数据分析的平台。</p>
+<p>现如今，WeDataSphere的沙箱环境试用企业超过1800家，自行搭建试用/上生产的企业超过800家，涉及到金融、互联网、通信、制造、教育等众多行业；典型用户如电信天翼云、平安保险、交通银行、Boss直聘、蔚来汽车、华中科技大学国家高性能计算中心等。</p>
+<h3 id="part3%EF%BC%9Aopenmldb%E5%8A%A0%E9%80%9F%E4%BC%81%E4%B8%9A%E4%B8%8A%E7%BA%BF%E6%99%BA%E8%83%BD%E5%8C%96%E5%BA%94%E7%94%A8%E2%80%94%E2%80%94%E5%8D%A2%E5%86%95">Part3：OpenMLDB加速企业上线智能化应用——卢冕 <a class="heading-anchor-permalink" href="#part3%EF%BC%9Aopenmldb%E5%8A%A0%E9%80%9F%E4%BC%81%E4%B8%9A%E4%B8%8A%E7%BA%BF%E6%99%BA%E8%83%BD%E5%8C%96%E5%BA%94%E7%94%A8%E2%80%94%E2%80%94%E5%8D%A2%E5%86%95">#</a></h3>
+<p><img src="./img/meetup-v8.png" alt="v8"></p>
+<p>智能化转型离不开AI的转型。在AI转型过程中面临着诸多问题与挑战，比如如今的市场上，95%的时间都花在数据上，但市面上如此繁多的与数据相关的开源软件，像hadoop，Mysql等等，却并没有完全解决人工智能落地的工程挑战。在这些挑战中，最关键问题往往是围绕着数据和特征的问题。如何解决特征问题，加速企业上线智能化应用呢？</p>
+<p><img src="./img/meetup-v9.png" alt="v9"></p>
+<p>上图是机器学习应用从开发到上线的整体流程，可以看到，MLOps生命周期会分为离线开发和线上服务两个相对独立的流程。在这每个流程中都可能会经历信息的载体从原始的Data到Feature一直到最后Model的转变过程。而OpenMLDB正是解决了中间Feature部分的难题，比如如何解决线上线下一致性校验带来的高昂工程化落地成本问题。</p>
+<p><img src="./img/meetup-v10.png" alt="v10"></p>
+<p>OpenMLDB 是一个开源机器学习数据库，提供线上线下一致的特征平台。如上图所示，从最外围的角度看，OpenMLDB有一个很显著的特点，就是把线上线下的编程语言统一成SQL。这样不管是离线开发，还是最后线上，所有特征的定义表达，以及计算表达，都通过统一的SQL去描述，只要数据科学家能把特征用SQL表达出来，就可以在OpenMLDB里同时做离线开发和上线，达到开发即上线的目的。</p>
+<p>从OpenMLDB内部来看，包含线上和线下两套处理引擎。线下是一套批处理的这个SQL引擎，基于Spark做了源代码级别的优化，让他能更好地处理特征计算的逻辑。而线上基于低延迟、高并发高可用的需求，从零开发了一个时序特征数据库，并针对这个时序数据去做优化的。保证了两个引擎之间的线上线下一致性。中间的执行计划生成器，是把数据科学家定义的SQL转换成线上和线下具体的执行计划，同时天然的去保证这个执行计划的这个一致性。最终达到了开发及上线的目的，省下了大量的人力成本，很好的解决了线上线下的一致性问题。</p>
+<p><img src="./img/meetup-v11.png" alt="v11"></p>
+<p>实际上，OpenMLDB也有很多的使用方法，如上图，一些公司在业务刚开始的时候，还没有上线需求，可能就用Python开发一下。但随着业务的增长，如果开发的脚本需要上线，就可以使用OpenMLDB全流程使用方式，即使用离线引擎、在线引擎，同时充分满足线上线下一致性，达到从离线开发到实时线上计算的完整流程。另外在社区也看到一些用户只使用OpenMLDB的在线引擎，比如已经有特征脚本了，但这个特征脚本在以前的在线引擎情况下满足不了需求，就可以把它迁移到OpenMLDB上。另外还有一部分用户，可能没有上线需求，或者说他没有这个实时性的上线要求，这种情况下，他其实可以用OpenMLDB的离线引擎，用Spark发行版做特征计算，也会算的比Spark社区版更快。</p>
+<h3 id="part4%EF%BC%9Aadlik-%E8%AE%A9ai%E6%9C%8D%E5%8A%A1%E6%9B%B4%E7%9C%81%E3%80%81%E6%9B%B4%E5%BF%AB%E3%80%81%E6%9B%B4%E4%BC%98%EF%BC%8C%E5%8A%A0%E9%80%9F%E4%BC%81%E4%B8%9A%E6%99%BA%E8%83%BD%E5%8C%96%E8%BD%AC%E5%9E%8B%E2%80%94%E2%80%94%E8%A2%81%E4%B8%BD%E9%9B%85">Part4：Adlik 让AI服务更省、更快、更优，加速企业智能化转型——袁丽雅 <a class="heading-anchor-permalink" href="#part4%EF%BC%9Aadlik-%E8%AE%A9ai%E6%9C%8D%E5%8A%A1%E6%9B%B4%E7%9C%81%E3%80%81%E6%9B%B4%E5%BF%AB%E3%80%81%E6%9B%B4%E4%BC%98%EF%BC%8C%E5%8A%A0%E9%80%9F%E4%BC%81%E4%B8%9A%E6%99%BA%E8%83%BD%E5%8C%96%E8%BD%AC%E5%9E%8B%E2%80%94%E2%80%94%E8%A2%81%E4%B8%BD%E9%9B%85">#</a></h3>
+<p><img src="./img/meetup-v12.png" alt="v12"></p>
+<p>众所周知，人工智能的两个重要阶段，包括离线训练和在线推理。其中训练阶段可以分成两个步骤，一是数据采集，预处理以及打标签的过程，也可以通过像OpenMLDB这样的开源项目，来实现相关实时计算。通过这些数据可以训练出能够达到最终训练效果的模型，然后再把这个模型部署到正式的生产环境当中去。二是推理阶段，它的整个流程看起来好像是简单很多，好像只要把训练好的模型部署好，跑起来就行，但实际上，这个阶段也是有很多坑要踩，同样面临很多挑战。所以推理阶段的挑战，也是AI整个模型落地的挑战。</p>
+<p><img src="./img/meetup-v13.png" alt="v13"></p>
+<p>如上图所示，AI模型落地的挑战其实包括四大方面，如何将模型和业务结合？如何高效部署模型? 如何确保模型以最优性能运行？如何有效管理生产环境中的模型呢？针对以上四个问题，中兴提供了Adlik的解决方案。</p>
+<p>Adlik是一个深度学习推理加速工具，可以将深度学习模型从训练完成，到部署到特定硬件并提供应用服务的端到端工具链，实现模型从研发状态到生产应用环境的高效切换。同时，他也可以与多种推理引擎协作，提供灵活的模型加速、部署、推理方案，助力用户构建高性能AI应用，帮助企业在落地模型时达到更省、更快、更优的效果。</p>
+<p><img src="./img/meetup-v14.png" alt="v14"></p>
+<p>上图是Adlik的架构图，主要分成两个大的部分，一是模型的优化器以及编译器的部分，主要功能是提升模型的计算效率以及减少能耗，最终降低模型在部署环境当中的推理实验。另一部分，就是推理引擎，能够支持云边端等多种环境下的这个模型的高效部署。</p>
+<p><img src="./img/meetup-v15.png" alt="v15"></p>
+<h4 id="%E4%BD%BF%E7%94%A8-adlik-%E5%8F%AF%E4%BB%A5%E8%AE%A9%E4%BC%81%E4%B8%9A%E6%9B%B4%E7%9C%81%E3%80%81%E6%9B%B4%E5%BF%AB%E3%80%81%E6%9B%B4%E4%BC%98%E7%9A%84%E8%90%BD%E5%9C%B0ai%E6%A8%A1%E5%9E%8B">使用 Adlik 可以让企业更省、更快、更优的落地AI模型 <a class="heading-anchor-permalink" href="#%E4%BD%BF%E7%94%A8-adlik-%E5%8F%AF%E4%BB%A5%E8%AE%A9%E4%BC%81%E4%B8%9A%E6%9B%B4%E7%9C%81%E3%80%81%E6%9B%B4%E5%BF%AB%E3%80%81%E6%9B%B4%E4%BC%98%E7%9A%84%E8%90%BD%E5%9C%B0ai%E6%A8%A1%E5%9E%8B">#</a></h4>
+<ul>
+<li>更省：Adlik能够实现工程化参数的自适应优化，降低部署复杂度，达到部署人力的节约。它还提供了一个简单方便的这个模型部署pipeline，大大的缩短模型上线的周期，节省了部署的时间。另外，它提供了统一的模型推理以及管理的接口，节约模型迁移的成本。</li>
+<li>更快：Adlik内置了多种高性能运行时，以供用户更快地按需选用。其次，它提供了可拓展性强的Serving SDK，可以更快集成自定义推理运行时。最后，它提供了灵活易用的推理API，能更快构建AI应用。</li>
+<li>更优：Adlik可以将多种模型压缩、优化算法在实践中表现出出色性能。面对异构的部署硬件，能够提供更优的端到端方案 。并且能够根据不同的应用场景，实现更优的推理性能（如时延、吞吐量等）和更优的模型管理。</li>
+</ul>
+<h3 id="%E6%80%BB%E7%BB%93">总结 <a class="heading-anchor-permalink" href="#%E6%80%BB%E7%BB%93">#</a></h3>
+<p>随着企业对转型的需求日益强烈，转型过程中的BI &amp; AI工具的选择将变得尤为重要。本次活动所介绍的三个开源项目，很好的解决了企业转型过程中面临的诸多问题与挑战，各项目的详细技术细节欢迎观看活动「视频回顾」了解。</p>
+<p>同时，为了持续探索企业智能化转型方法论、优质案例、最佳实践及支撑企业智能转型的开源技术，星策开源社区还将继续举办智能化转型相关活动，欢迎关注此群。</p>
+<p><img src="./img/qrcode.png" alt="v15"></p>
+
+      </article>
+    </div>
+    <script>
+      // Load contents.json if you need it
+    </script>
+    <script>
+      // FROM http://purecss.io/js/ui.js
+      (function(window, document) {
+        var layout = document.getElementById("layout"),
+          menu = document.getElementById("menu"),
+          menuLink = document.getElementById("menuLink");
+
+        function toggleClass(element, className) {
+          var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+          for (; i < length; i++) {
+            if (classes[i] === className) {
+              classes.splice(i, 1);
+              break;
+            }
+          }
+          // The className is not found
+          if (length === classes.length) {
+            classes.push(className);
+          }
+
+          element.className = classes.join(" ");
+        }
+
+        menuLink.onclick = function(e) {
+          var active = "active";
+
+          e.preventDefault();
+          toggleClass(layout, active);
+          toggleClass(menu, active);
+          toggleClass(menuLink, active);
+        };
+      })(this, this.document);
+    </script>
+  </body>
+</html>

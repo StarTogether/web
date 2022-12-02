@@ -1,3 +1,4 @@
+import summit from '../../static/banner/summit.png';
 import mainBg3 from '../../static/main/mainBg@3x.jpg'
 import devopsBG from '../../static/banner/devops-banner.png';
 import transitionBG from '../../static/banner/trans-banner.png';
@@ -7,6 +8,17 @@ import sql from '../../static/banner/sql-banner.png';
 
 
 export const BANNER_CONSTANTS = [
+    {
+        key: 'summit',
+        title: 'summit',
+        bg: summit,
+        subtitle: 'summit',
+        desc: 'summit',
+        hidden: 'hidden',
+        link: 'https://6684201514000.huodongxing.com/event/2678448203122',
+        opt: '报名活动',
+        optType: 'activity'
+    },
     {
         key: 'main',
         title: <p>新一代的企业智能化转型<br />开源社区</p>,

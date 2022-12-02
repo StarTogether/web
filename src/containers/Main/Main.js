@@ -61,7 +61,7 @@ class Main extends Component {
           <div className="main-header">
             <Header />
           </div>
-          <Carousel autoplay>
+          <Carousel>
             {
               BANNER_CONSTANTS.map((banner, idx) => (
                 <div className="main-bgimg" key={idx}>
@@ -79,7 +79,7 @@ class Main extends Component {
                           <span>{banner.opt}</span>
                           <RightOutlined />
                         </Button> :
-                        <Button type='primary' className='contact' href={banner.link}>
+                        <Button type='primary' className='contact' target='blank' href={banner.link}>
                           <span>{banner.opt}</span>
                           <RightOutlined />
                         </Button>

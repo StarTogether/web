@@ -26,7 +26,7 @@ class Header extends Component {
             <Link to='/'>首页</Link>
           </Menu.Item>
           <Menu.Item key='summit'>
-            <Link to='/summit'>年度 Summit</Link>
+            <Link to='/summit/2022/review'>年度 Summit</Link>
           </Menu.Item>
           <Menu.Item key='dakashuo'>
             <Link to='/dakashuo/list'>大咖说</Link>

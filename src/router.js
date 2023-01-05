@@ -12,6 +12,7 @@ import ArticlesList from './containers/Articles/list'
 import NewsList from './containers/news/list'
 import DakaList from './containers/dakashuo/list'
 import Summit from './containers/Summit/index'
+import SummitReview from './containers/Summit/review/index'
 
 import { ARTICLES_CONSTANT } from './constants/articles'
 import { ACTIVITIES_CONSTANT } from './constants/activities'
@@ -25,7 +26,8 @@ export default class RouterWrap extends Component {
         <BrowserRouter>
           <Route path="/" component={Main} exact />
           <Route path="/dakashuo/list" component={DakaList} exact />
-          <Route path="/summit" component={Summit} exact />
+          <Route path="/summit/2022" component={Summit} exact />
+          <Route path="/summit/2022/review" component={SummitReview} exact />
           <Route path="/activities/list" component={ActivitiesList} exact />
           <Route path="/articles/list" component={ArticlesList} exact />
           <Route path="/news/list" component={NewsList} exact />

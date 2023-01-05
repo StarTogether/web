@@ -15,8 +15,8 @@ export const BANNER_CONSTANTS = [
         subtitle: 'summit',
         desc: 'summit',
         hidden: 'hidden',
-        link: 'https://6684201514000.huodongxing.com/event/2678448203122',
-        opt: '报名活动',
+        link: '/summit/2022/review',
+        opt: '峰会回顾',
         optType: 'activity'
     },
     {

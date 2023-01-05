@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import SummitBG from '../../static/banner/summit.png'
@@ -22,9 +23,11 @@ export default function Summit({ }) {
             </div>
             <div className='summit-header'>
                 <img width="100%" src={SummitBG} />
-                <Button type='primary' className='summit-contact' target='blank' href="https://6684201514000.huodongxing.com/event/2678448203122">
-                    <span>报名活动</span>
+                <Button type='primary' className='summit-contact' target='blank'>
+                    <Link to="/summit/2022/review">
+                    <span>查看活动回顾</span>
                     <RightOutlined />
+                    </Link>
                 </Button>
             </div>
             <div className='summit-container'>

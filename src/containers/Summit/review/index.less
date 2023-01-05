@@ -1,0 +1,90 @@
+@primary-color: #6852EF;
+
+.review {
+    min-width: 1000px;
+    .review-header {
+        position: relative;
+    }
+    .review-container {
+        width: 100%;
+        position: relative;
+        padding-top: 100px;
+        padding-bottom: 80px;
+        > img {
+            position: absolute;
+            opacity: 0.6;
+            height: 1000px;
+            top: -60px;
+            z-index: -2;
+        }
+        .review-view {
+            width: 90%;
+            height: 700px;
+            margin: 0px auto 60px auto;
+            .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu {
+                padding: 12px 30px;
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+        .ant-menu {
+            background: transparent;
+        }
+        .ant-menu-horizontal {
+            border-bottom: 0;
+        }
+        .video-container {
+            width: 100%;
+            height: 680px;
+            // border: 1px solid fade(@primary-color, 40);
+            display: flex;
+            flex-wrap: nowrap;
+            .video {
+                width: auto;
+                flex: 1;
+                height: 100%;
+                iframe {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .menu {
+                width: 280px;
+                border: 1px solid fade(@primary-color, 20);
+            }
+            .menu-col {
+                height: 680px;
+                overflow-y: auto;
+            }
+            .menu-item {
+                width: 100%;
+                padding: 18px 12px;
+                border-bottom: 1px solid fade(@primary-color, 20);
+                .title {
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+                .speaker {
+                    font-size: 12px;
+                    margin-top: 18px;
+                    color: #333;
+                    img {
+                        margin-right: 6px;
+                        margin-bottom: 6px;
+                        display: block;
+                    }
+                }
+            }
+            .menu-item-active,
+            .menu-item:hover {
+                cursor: pointer;
+                transition: all .2s ease-in;
+                background-color: fade(@primary-color, 10);
+            }
+            .menu-item:nth-last-child(1) {
+                border-bottom: 0;
+            }
+        }
+    }
+}

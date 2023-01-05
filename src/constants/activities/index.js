@@ -16,10 +16,10 @@ export const TRANS_ACTIVITIES_CONSTANT = [
         key: 'feature-store-v4-meetup-2022-09-04',
         title: '星策社区大咖说第二期-沈欣老师数字化转型经验分享',
         desc: '本期星策社区大咖说”将于 2022年11月底线上召开！特邀请星策社区转型导师，前喜茶数字化高级副总裁 沈欣先生，共同探讨数字化转型过程中的方法论，营销数字化转型，以及实践案例。',
-        date: '敬请期待',
+        date: '2022.11.28',
         link: '',
         review_link: '',
-        bilibili_link: ''
+        bilibili_link: 'https://www.bilibili.com/video/BV1cP411g7Dn/'
     },
     {
         img: mengniu,
